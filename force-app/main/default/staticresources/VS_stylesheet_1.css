@@ -1,0 +1,31 @@
+.left-justified{
+    text-align:left;
+}
+
+.header{
+
+    border: 1px solid black;
+    border-radius: 5pt 5pt 0pt 0pt;
+
+    font-size: 3em;
+}
+
+.body{
+
+    border: 1px solid black;
+    /*border-radius: 5pt;*/
+}
+
+.light_bg{
+    background-color: #ffe8c1;
+    /*background-color: #ffcf7c;*/
+}
+
+.dark_bg{
+    background-color: #f9b644; 
+}
+
+td.cell_repeat{
+    padding: 2pt;
+    border-right: solid 2px rgb(225, 225, 225);
+}

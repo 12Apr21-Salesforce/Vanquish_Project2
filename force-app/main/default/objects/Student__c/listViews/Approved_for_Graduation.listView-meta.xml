@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_for_Graduation</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Approved_for_Gradution__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Approved for Graduation</label>
+</ListView>

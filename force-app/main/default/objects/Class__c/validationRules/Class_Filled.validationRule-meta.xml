@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Filled</fullName>
+    <active>true</active>
+    <description>Once the class is full, no other students should be added.</description>
+    <errorConditionFormula>Class_Count__c &gt;  Class_Size__c</errorConditionFormula>
+    <errorMessage>Class cannot go over its size</errorMessage>
+</ValidationRule>

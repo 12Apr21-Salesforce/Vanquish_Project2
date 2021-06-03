@@ -1,0 +1,6 @@
+Hi (Mr/Mrs) {!Student__c.Parent_Last_Name__c},
+
+I wanted to inform you that your student, {!Student__c.Name}, has not met the standards required in our school and their grades show that. I implore you to push your student to always do the best work they can so that they can catch up with their peers. Have a wonderful day! 
+
+Sincerely, 
+Sky High Faculty

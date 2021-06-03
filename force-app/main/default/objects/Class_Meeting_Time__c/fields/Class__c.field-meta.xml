@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class__c</fullName>
+    <description>Class for which this record&apos;s days/times are specified.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Class for which this record&apos;s days/times are specified.</inlineHelpText>
+    <label>Class</label>
+    <referenceTo>Class__c</referenceTo>
+    <relationshipLabel>Class Meeting Times</relationshipLabel>
+    <relationshipName>Class_Meeting_Times1</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

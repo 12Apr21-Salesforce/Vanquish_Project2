@@ -1,0 +1,32 @@
+<apex:page standardController="Student__c" recordSetVar="student">
+    <apex:stylesheet value="{!$Resource.VS_stylesheet_1}"/>
+    <apex:image id="theImage5" value="{!URLFOR ($Resource.studentSchedule)}" alt="Graduation Celebration" width="100%" style="text-align:center;"/>
+    
+    <!--div style="background-color:#ffcf7c"-->
+    
+    <!--<div class="header dark_bg">
+        <h6>View Student Schedules</h6>
+    </div>-->
+    <apex:pageBlock title="Student List" >
+        
+        <apex:form >
+            <apex:commandButton value="Previous Page" action="{!previous}" disabled="{!NOT(hasPrevious)}"/><apex:commandButton value="Next Page" action="{!next}" disabled="{!NOT(hasNext)}"/>
+            <br/>
+            <br/>
+            <apex:pageBlockTable value="{!student}" var="s" >
+                <apex:column style="font-family: monospace; font-size: 2em"><apex:facet name="header">Student Name</apex:facet><apex:outputField value="{!s.name}"/></apex:column>
+                <apex:column style="font-family: monospace; font-size: 2em"><apex:facet name="header">Grade Level</apex:facet><apex:outputField value="{!s.Grade_Level__c}"/></apex:column>
+                <!--apex:column><button onclick="window.location.href='https://skyhighschool1.force.com/StudentSchedule?id=a0M5e000000uxOBEAY';">View Schedule</button></apex:column-->
+                <apex:column style="font-family: monospace; font-size: 2em"><a href="https://skyhighschool1.force.com/StudentSchedule?id={!s.Id}" style="color: #0cf232">{!s.name}'s Schedule</a></apex:column>
+            </apex:pageBlockTable>
+            <br/>
+            <br/>
+            <br/>
+            <apex:commandButton value="Previous Page" action="{!previous}" disabled="{!NOT(hasPrevious)}"/><apex:commandButton value="Next Page" action="{!next}" disabled="{!NOT(hasNext)}"/>
+        </apex:form>
+        
+    </apex:pageBlock>
+    <!--/div-->
+</apex:page>
+
+<!--#f9b743-->

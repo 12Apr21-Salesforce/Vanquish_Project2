@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Grad__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Approved_for_Gradution__c = true, IMAGE(&quot;https://img.icons8.com/dusk/64/000000/contract.png&quot;,
+&quot;Approved Grad&quot;, 40, 40), IMAGE(&quot;https://img.icons8.com/emoji/48/000000/cross-mark-emoji.png&quot;,
+&quot;Not Approved&quot;, 40, 40))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approved Grad</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

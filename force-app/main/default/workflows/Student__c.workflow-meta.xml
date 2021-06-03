@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_to_Parents_about_Student_Grades</fullName>
+        <description>Email to Parents about Student Grades</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Parent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Student_Grade_Warning</template>
+    </alerts>
+    <alerts>
+        <fullName>Weekly_School_Updates</fullName>
+        <ccEmails>hzeaulhg1@reichwerden.me</ccEmails>
+        <ccEmails>nsifo.neyma@gxmer.com</ccEmails>
+        <ccEmails>2black.billy.9w@malchikzer.cf</ccEmails>
+        <description>Weekly School Updates</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Parent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Weekly_Parent_Checkin</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Grad_Is_Ready</fullName>
+        <field>Approved_for_Gradution__c</field>
+        <literalValue>1</literalValue>
+        <name>Grad Is Ready</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Held_For_Year</fullName>
+        <field>Graduation_Date__c</field>
+        <formula>IF(
+AND(
+MONTH( Graduation_Date__c ) = 2,
+DAY( Graduation_Date__c ) = 29
+),
+DATE(
+YEAR( Graduation_Date__c )+1,
+3,
+1),
+DATE(
+YEAR( Graduation_Date__c )+1,
+MONTH( Graduation_Date__c ),
+DAY( Graduation_Date__c )
+)
+)</formula>
+        <name>Held-For-Year</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Not_Suspended_But_Has_Warning</fullName>
+        <field>Behavior__c</field>
+        <literalValue>Satisfactory</literalValue>
+        <name>Not Suspended But Has Warning</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Student_is_Suspened</fullName>
+        <field>Behavior__c</field>
+        <literalValue>Suspended</literalValue>
+        <name>Student is Suspened</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Low GPA</fullName>
+        <actions>
+            <name>Email_to_Parents_about_Student_Grades</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Student__c.GPA__c</field>
+            <operation>lessThan</operation>
+            <value>3</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

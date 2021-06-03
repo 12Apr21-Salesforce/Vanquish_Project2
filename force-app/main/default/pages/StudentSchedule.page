@@ -1,0 +1,89 @@
+<apex:page controller="StudentScheduleController" applyBodyTag="false">
+    <style>
+        body{
+            background-color: #ffffff;
+        }
+    </style>
+
+
+    
+<apex:stylesheet value="{!$Resource.VS_stylesheet_1}"/>
+
+    <!--h6>Hello, {!$User.FirstName}. Today is {!TODAY()}.</h6-->
+
+    <apex:image id="theImage5" value="{!URLFOR ($Resource.studentSchedule)}" alt="Graduation Celebration" width="100%" style="text-align:center;"/>
+
+
+    <div class="header dark_bg" style="padding:0pt 0pt 0pt 5pt; font-family: monospace; font-size: 2em;">
+    <h6>Student Details</h6>
+    </div>
+
+    <div class="body light_bg">
+        <a href="https://skyhighschool1.force.com/apex/StudentScheduleList" style="padding: 2pt 1pt 0pt 1pt">&lt;&lt;Back</a>
+        <br/>
+
+        <div style="padding:10pt 5pt;">
+        <apex:outputLabel value="Student Name: " style="font-family: monospace; font-size: 2em;"/>          <apex:outputField value="{!currentStudent.Name}" /><br/>
+        <apex:outputLabel value="Grade Level: " style="font-family: monospace; font-size: 2em;"/>           <apex:outputField value="{!currentStudent.Grade_Level__c}"/><br/>
+        <apex:outputLabel value="Student Counselor: " style="font-family: monospace; font-size: 2em;"/>     <apex:outputField value="{!currentStudent.Student_Counselor__c}"/><br/>
+        <br/>
+        <apex:outputLabel value="Approved for Graduation: " style="font-family: monospace; font-size: 2em;"/><apex:outputField value="{!currentStudent.Approved_for_Gradution__c}"/><br/>
+        <apex:outputLabel value="Graduation Date: " style="font-family: monospace; font-size: 2em;"/>       <apex:outputField value="{!currentStudent.Graduation_Date__c}"/><br/>
+        <apex:outputLabel value="GPA: " style="font-family: monospace; font-size: 2em;"/>                   <apex:outputField value="{!currentStudent.GPA__c}"/><br/>
+        </div>
+    </div>
+
+    <div class="body light_bg" style="height:100%">
+
+        
+        
+    <apex:tabPanel >
+        <apex:tab label="Schedule - Today">
+            <apex:pageBlock title="Schedule for Today:">
+
+                <apex:outputText value="No classes today." rendered="{!noClassesToday}"/>
+
+                <table style="border-collapse: collapse">
+                <tr><apex:repeat value="{!todaysClassTimes}" var="currentClassTime">
+                    <td class="cell_repeat">{!currentClassTime.Class_Name__c}</td>
+                </apex:repeat></tr>
+                <tr><apex:repeat value="{!todaysClassTimes}" var="currentClassTime">
+                    <td class="cell_repeat"><apex:outputField value="{!currentClassTime.Start_Time__c}"/> - <apex:outputField value="{!currentClassTime.End_Time__c}"/></td>
+                </apex:repeat></tr>
+                </table>
+
+            </apex:pageBlock>
+        </apex:tab>
+
+
+
+        <apex:tab label="Schedule - Weekly">
+            <apex:pageBlock title="Weekly Class Schedule:">
+
+                <apex:outputText value="No classes scheduled for this student." rendered="{!noClasses}"/>
+
+                <apex:dataTable value="{!studentClasses}" var="studentClass" bgcolor="#fdf2de" border="5" cellpadding="2" cellspacing="2" rendered="{!NOT(noClasses)}">
+                    <apex:column >{!studentClass.Name}</apex:column>
+                    <apex:column >
+                    <apex:dataTable value="{!studentClass.Class_Meeting_Times1__r}" var="classMeetingTime" cellspacing="5">
+                        <apex:column ><apex:outputField value="{!classMeetingTime.Day__c}"/></apex:column>
+                        <apex:column ><apex:outputField value="{!classMeetingTime.Start_Time__c}"/></apex:column>
+                        <apex:column ><apex:outputField value="{!classMeetingTime.End_Time__c}"/></apex:column>
+                    </apex:dataTable>
+                    </apex:column>
+                </apex:dataTable>
+ 
+            </apex:pageBlock>
+        </apex:tab>
+    </apex:tabPanel>
+
+    <br/>
+    <br/>
+    
+    <!--br/>
+    <a href="https://skyhighschool1.force.com/apex/StudentScheduleList">&lt;&lt;Back</a>
+    <br/-->
+
+</div>
+
+</apex:page>
