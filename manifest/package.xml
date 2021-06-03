@@ -66,6 +66,7 @@
         <members>Teacher__c</members>
         <members>Gard_Progress</members>
         <members>Teacher_Schedule</members>
+        <members>Teacher_Schedule_List</members>
         <members>Student_Schedules</members>
         <members>New_Student</members>
         <name>CustomTab</name>
@@ -195,6 +196,14 @@
         <members>Sky_High_Home</members>
         <members>Sky_High_UtilityBar</members>
         <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Class_Meeting_Time__c.Must_Be_During_School_Hours</members>
+        <members>Class_Meeting_Time__c.End_Time_Later_Than_Start_Time</members>
+        <members>Student__c.NameCannotBeEmpty</members>
+        <members>Club__c.Club_Filled</members>
+        <members>Class__c.Class_Filled</members>
+        <name>ValidationRule</name>
     </types>
     <version>51.0</version>
 </Package>
