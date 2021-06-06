@@ -41,6 +41,30 @@
         <name>LightningComponentBundle</name>
     </types>
     <types>
+        <members>Sky_High1</members>
+        <name>ExperienceBundle</name>
+	</types>
+    <types>
+        <!--<members>Grad_Progress</members>
+        <members>New_Student</members>
+        <members>Student_Schedule</members>
+        <members>Teacher_Schedule</members>-->
+        <members>Sky_High</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>Sky_High1</members>
+        <name>SiteDotCom</name>
+    </types>
+    <types>
+        <members>Sky High</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>cbSky_High</members>
+        <name>NetworkBranding</name>
+    </types>
+    <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>
@@ -48,6 +72,11 @@
         <members>Student__c.Suspension_Approval</members>
         <members>Student__c.Approve_Graduation</members>
         <name>ApprovalProcess</name>
+    </types>
+    <types>
+        <members>Experiences_Shared_Document_Folder</members>
+        <members>Experiences_Shared_Document_Folder/Sky_High_Logo_png1.png</members>
+        <name>Document</name>
     </types>
     <types>
         <members>*</members>

@@ -51,7 +51,7 @@
             <field>Parent_Email__c</field>
             <operator>NotEqualTo</operator>
             <value>
-                <stringValue></stringValue>
+                <stringValue/>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>

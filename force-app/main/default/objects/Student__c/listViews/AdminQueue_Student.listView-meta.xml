@@ -5,6 +5,6 @@
     <label>AdminQueue</label>
     <queue>AdminQueue</queue>
     <sharedTo>
-        <allInternalUsers></allInternalUsers>
+        <allInternalUsers/>
     </sharedTo>
 </ListView>

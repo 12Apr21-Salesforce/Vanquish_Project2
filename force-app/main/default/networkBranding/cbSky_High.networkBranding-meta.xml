@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetworkBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <loginFooterText>salesforce.com</loginFooterText>
+    <loginLogo>Experiences_Shared_Document_Folder/Sky_High_Logo_png1.png</loginLogo>
+    <loginLogoName>Sky_High_Logo.png</loginLogoName>
+    <loginPrimaryColor>#EA0003</loginPrimaryColor>
+    <loginQuaternaryColor>#FFFFFF</loginQuaternaryColor>
+    <network>Sky High</network>
+    <pageHeader>Experiences_Shared_Document_Folder/Sky_High_Logo_png1.png</pageHeader>
+    <primaryColor>#75D6FE</primaryColor>
+    <primaryComplementColor>#222222</primaryComplementColor>
+    <quaternaryColor>#FEFBFA</quaternaryColor>
+    <quaternaryComplementColor>#222222</quaternaryComplementColor>
+    <secondaryColor>#EB0001</secondaryColor>
+    <tertiaryColor>#FEFBFA</tertiaryColor>
+    <tertiaryComplementColor>#222222</tertiaryComplementColor>
+    <zeronaryColor>#75D6FE</zeronaryColor>
+    <zeronaryComplementColor>#222222</zeronaryComplementColor>
+</NetworkBranding>
