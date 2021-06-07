@@ -36,3 +36,6 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
+force-app/main/default/sites/Sky_High.site-meta.xml
+force-app/main/default/networks/Sky High.network-meta.xml
+.vscode/settings.json
