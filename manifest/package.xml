@@ -41,22 +41,21 @@
         <name>LightningComponentBundle</name>
     </types>
     <types>
-        <members>Sky_High1</members>
-        <name>ExperienceBundle</name>
-	</types>
-    <types>
         <!--<members>Grad_Progress</members>
         <members>New_Student</members>
         <members>Student_Schedule</members>
         <members>Teacher_Schedule</members>-->
+        <members>Sky_High_Deuce</members>
         <members>Sky_High</members>
         <name>CustomSite</name>
     </types>
     <types>
+        <members>Sky_High_Deuce1</members>
         <members>Sky_High1</members>
         <name>SiteDotCom</name>
     </types>
     <types>
+        <members>Sky High Deuce</members>
         <members>Sky High</members>
         <name>Network</name>
     </types>
