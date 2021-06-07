@@ -7,7 +7,7 @@
         <customerUserRole>Teacher</customerUserRole>
         <employeeUserRole>Principal</employeeUserRole>
         <partnerUserRole>Student Counselor</partnerUserRole>
-    </communityRoles>
+    </communityRoles> 
     <disableReputationRecordConversations>false</disableReputationRecordConversations>
     <emailSenderAddress>moonshine.machiavelli@cunning-badger-5qon70.com</emailSenderAddress>
     <emailSenderName>Sky High</emailSenderName>
