@@ -45,22 +45,32 @@ The Sky High Salesforce org was created to replicate the operations of a high sc
 ##### Successfully Retrieve and Deploy between Orgs
 1. ###### Clone the repository down locally.
    - ###### `git clone https://github.com/Jayvious/SkyHigh`
-2. ###### Deploy to fresh org using ANT or Visual Studio Code using:
-   - ###### `sfdx force:source:deploy -x manifest/package.xml`
-
+2. ###### In your org, go to Setup > Feature Settings > Digital Experiences > Settings 
+   - ###### Click Enable Digital Experiences
+   - ###### Give this site a domain name of your choosing
+3. ###### Go back to Setup > Feature Settings > Digital Experiences > Settings 
+   - ###### Click Enable Experience Bundles API
+4. ###### In VS Studio Code, in force-app\main\default 
+   - ###### Right-click the documents folder and deploy source to org
+   - ###### After that successfully deploys, open the file in force-app\main\default\sites\Sky_High.site-meta.xml 
+   - ###### Change the siteAdmin and siteGuestRecordDefaultOwner to a user's username in your org and save
+   - ###### Deploy to org using: `sfdx force:source:deploy -x manifest/package.xml`
+   - ###### (If there is an error deploying due to a previous site already using these parameters)
+      - ###### add URL paths to any pre-existing sites, as this site uses the default blank URL path 
+   
 ##### See changes as System Admin
-3. ###### In your org, navigate to Setup > Apps > App Manager 
-4. ###### Click the dropdown arrow next to SkyHigh and click edit
-5. ###### In the User Profiles section, add the System Admin Profile (as well as any other profiles you want)
+5. ###### In your org, navigate to Setup > Apps > App Manager 
+6. ###### Click the dropdown arrow next to SkyHigh and click edit
+7. ###### In the User Profiles section, add the System Admin Profile (as well as any other profiles you want)
 
-##### Enable Tab Visabliity
-6. ###### Next, navigate to Setup > Users > Profiles
-7. ###### Select the System Administrator profile (or any other profile you want)
+##### Enable Tab Visability
+8. ###### Next, navigate to Setup > Users > Profiles
+9. ###### Select the System Administrator profile (or any other profile you want)
    - ###### if Enhanced Profile User Interface enabled:
-     - ###### In App > Object Settings, search for each of the following Objects and set their tab visibility to Default-On"
-     - ###### Campuses, Classes, Clubs, Student Counselors, Students, and Teachers 
+     - ###### In App > Object Settings, search for each of the following Objects and set their tab visibility to Default-On:
+     - ###### Campuses, Classes, Clubs, Student Counselors, Graduation Progress, New Student, Students, Student Schedules, Teachers, Teacher Schedule, and Teacher Schedules
    - ###### if Enhance Profile User Interface disabled:
      - ###### Click edit, and then scroll down to tab settings and set the following to Default-On:
-     - ###### Campuses, Classes, Clubs, Student Counselors, Students, and Teachers 
+     - ###### Campuses, Classes, Clubs, Student Counselors, Graduation Progress, New Student, Students, Student Schedules, Teachers, Teacher Schedule, and Teacher Schedules
 
-8. ###### You should now be able to see all necessary objects, tabs, and apps to interact with the new additions.
+10. ###### You should now be able to see all necessary objects, tabs, sites, and apps to interact with the new additions.

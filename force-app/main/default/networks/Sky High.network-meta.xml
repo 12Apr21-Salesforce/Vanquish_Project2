@@ -9,7 +9,7 @@
         <partnerUserRole>Student Counselor</partnerUserRole>
     </communityRoles>
     <disableReputationRecordConversations>false</disableReputationRecordConversations>
-    <emailSenderAddress>jayviouswilliams@gmail.com</emailSenderAddress>
+    <emailSenderAddress>moonshine.machiavelli@cunning-badger-5qon70.com</emailSenderAddress>
     <emailSenderName>Sky High</emailSenderName>
     <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
     <enableDirectMessages>true</enableDirectMessages>
@@ -56,7 +56,7 @@
         <customTab>Student_Schedules</customTab>
         <customTab>Teacher_Schedule_List</customTab>
         <customTab>Gard_Progress</customTab>
-        <defaultTab>01r5e000000XxBY</defaultTab>
+        <defaultTab>01r5e000000XxBY</defaultTab> 
     </tabs>
     <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
 </Network>
