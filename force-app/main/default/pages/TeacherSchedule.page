@@ -15,25 +15,41 @@
         }
     </style>
     
-    <apex:image id="theImage2" value="{!URLFOR ($Resource.teacherSchedules)}" alt="Graduation Celebration" width="100%"  style="text-align:center;"/>   
+    <apex:image id="theImage2" 
+        value="{!URLFOR ($Resource.teacherSchedules)}" 
+        alt="Graduation Celebration" 
+        width="100%"  
+        style="text-align:center;"/>   
     
     <apex:form >
-        <h1 style="font-family: monospace; font-size: 4em; margin-left: 24%; padding-bottom: 30px">Schedule for: {!Teacher__c.name}</h1>
+        <h1 style="font-family: monospace; font-size: 4em; margin-left: 24%; padding-bottom: 30px">
+            Schedule for: {!Teacher__c.name}
+        </h1>
         
         <div id="accordionTest">
-            <p class="accordion" style="background-color: #f9b644; font-size: 3em; width: 100%; padding: 5px; font-family: copperplate;"><a href="#">Schedule for the day</a></p>
+            <p class="accordion" 
+                style="background-color: #f9b644; font-size: 3em; width: 100%; padding: 5px; font-family: copperplate;">
+                <a href="#">
+                    Schedule for the day
+                </a>
+            </p>
             <div>
                 <apex:pageBlock id="teacher_list1" rendered="{!classesToday.size>0}">  
                     <apex:pageBlockTable value="{!classesToday}" var="cls" border="10" id="theTable1" >
-                        <apex:column headerValue="Class and Campus" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">{!cls.classVar.Name}&nbsp;@{!cls.classVar.campus__r.name}</apex:column>
+                        <apex:column headerValue="Class and Campus" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">
+                            {!cls.classVar.Name}&nbsp;@{!cls.classVar.campus__r.name}
+                        </apex:column>
                         <apex:column headerValue="Students" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">
                             <apex:dataTable value="{!cls.jC}" var="j" >
-                                <apex:column style="font-family: monospace;">{!j.student__r.name}</apex:column>
+                                <apex:column style="font-family: monospace;">
+                                    {!j.student__r.name}
+                                </apex:column>
                             </apex:dataTable>
                         </apex:column>
                         <apex:column headerValue="Days and Times" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">
                             <apex:dataTable value="{!cls.meetingTime}" var="cmt">
-                                <apex:column style="font-family: monospace ;">{!cmt.Day__c} &nbsp;
+                                <apex:column style="font-family: monospace ;">
+                                    {!cmt.Day__c} &nbsp;
                                     <apex:outputField value="{!cmt.Start_Time__c}"/> -&nbsp;
                                     <apex:outputField value="{!cmt.End_Time__c}"/>
                                 </apex:column>
@@ -45,20 +61,29 @@
                     No classes scheduled for today
                 </apex:pageBlock>
             </div>
-            <p class="accordion" style="background-color: #f9b644; font-size: 3em; width: 100%; padding: 5px; font-family: copperplate;"><a href="#">Full Schedule</a></p>
+                <p class="accordion" style="background-color: #f9b644; font-size: 3em; width: 100%; padding: 5px; font-family: copperplate;">
+                    <a href="#">
+                        Full Schedule
+                    </a>
+                </p>
             <div>
                 <apex:pageBlock id="teacher_list">  
                     <apex:pageBlockTable value="{!classes}" var="cls" border="10" id="theTable" rendered="true">
-                        <apex:column headerValue="Class and Campus" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">{!cls.classVar.Name}&nbsp;@{!cls.classVar.campus__r.name}</apex:column>
+                        <apex:column headerValue="Class and Campus" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">
+                            {!cls.classVar.Name}&nbsp;@{!cls.classVar.campus__r.name}
+                        </apex:column>
                         <apex:column headerValue="Students" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">
                             <apex:dataTable value="{!cls.jC}" var="j" >
-                                <apex:column style="font-family: monospace;">{!j.student__r.name}</apex:column>
+                                <apex:column style="font-family: monospace;">
+                                    {!j.student__r.name}
+                                </apex:column>
                                 <!--<apex:column ><a href="https://universalcontainers-1d0.lightning.force.com/lightning/r/Student__c/{!j.student__r.id}/view">{!j.student__r.name}</a></apex:column>-->
                             </apex:dataTable>
                         </apex:column>
                         <apex:column headerValue="Days and Times" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">
                             <apex:dataTable value="{!cls.meetingTime}" var="cmt">
-                                <apex:column style="font-family: monospace ;">{!cmt.Day__c} &nbsp;
+                                <apex:column style="font-family: monospace ;">
+                                    {!cmt.Day__c} &nbsp;
                                     <apex:outputField value="{!cmt.Start_Time__c}"/> -&nbsp;
                                     <apex:outputField value="{!cmt.End_Time__c}"/>
                                 </apex:column>
