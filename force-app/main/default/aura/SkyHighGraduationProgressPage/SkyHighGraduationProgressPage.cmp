@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+<!-- Add Banner to top of Aura Page -->
+    <div class="gradBanner">
+        <img src="{!$Resource.GradProgressFinal}"/>
+    </div>
+
+    <lightning:card>
+        <!-- Put report charts here -->
+    </lightning:card>
+
+</aura:component>
