@@ -9,7 +9,7 @@
         <partnerUserRole>Student Counselor</partnerUserRole>
     </communityRoles>
     <disableReputationRecordConversations>false</disableReputationRecordConversations>
-    <emailSenderAddress>jayviouswilliams@gmail.com</emailSenderAddress>
+
     <emailSenderName>Sky High</emailSenderName>
     <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
     <enableDirectMessages>true</enableDirectMessages>
