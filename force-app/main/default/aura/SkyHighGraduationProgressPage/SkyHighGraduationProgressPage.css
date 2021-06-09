@@ -1,6 +1,8 @@
-.THIS.gradBanner {
+.THIS.title {
 
-    width:auto;
+    font-size: 2em;
+    font-family: monospace;
+    color: #0000ff;
 
 }
 
