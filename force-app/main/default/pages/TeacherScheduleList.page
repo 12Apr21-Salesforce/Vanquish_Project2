@@ -3,17 +3,10 @@
 <apex:form >
         <apex:pageBlock >
             <apex:pageBlockTable value="{!teachers}" var="teach" border="10">
-                <apex:column headerValue="Teacher Name" style="font-family: monospace ; 
-                font-size: 2em;vertical-align:Top;padding-top:10px;">
+                <apex:column headerValue="Teacher Name" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">
                     {! teach.Name } 
                 </apex:column>
-                <apex:column headerValue="Schedule" 
-                    style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;">
-                        <a href="https://skyhighschool1.force.com/apex/TeacherSchedule?id={!teach.id}" 
-                            style="color: #0cf232">
-                            {! teach.Name }'s Schedule
-                        </a>
-                </apex:column>
+                <apex:column headerValue="Schedule" style="font-family: monospace ; font-size: 2em;vertical-align:Top;padding-top:10px;"><a href="https://skyhighschool1.force.com/apex/TeacherSchedule?id={!teach.id}" style="color: #0cf232">{! teach.Name }'s Schedule</a></apex:column>
             </apex:pageBlockTable>
         </apex:pageBlock>
     </apex:form>
