@@ -6,7 +6,11 @@
     </div>
 
     <lightning:card>
-        <!-- Put report charts here -->
+        <lightning:layout>
+              <!-- Put report charts here -->
+        </lightning:layout>
     </lightning:card>
+
+    
 
 </aura:component>
