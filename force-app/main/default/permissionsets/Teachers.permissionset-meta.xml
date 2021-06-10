@@ -77,12 +77,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Student_Couselor__c.Education__c</field>
+        <field>Student_Counselor__c.Education__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Student_Couselor__c.Legacy_Student_Conselor__c</field>
+        <field>Student_Counselor__c.Legacy_Student_Conselor__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -190,7 +190,7 @@
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Student_Couselor__c</object>
+        <object>Student_Counselor__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -220,7 +220,7 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Student_Couselor__c</tab>
+        <tab>Student_Counselor__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

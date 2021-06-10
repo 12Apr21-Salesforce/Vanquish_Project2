@@ -1,15 +1,38 @@
 ({
-    handleSectionToggle : function(component, event) {
+    getData : function(cmp){
 
-        // Return a list of open sections
-        var openSections = event.getParam('openSections');
+        var action = cmp.get('c.getStudents');
 
-        if (openSections.length === 0) {
-            cmp.set('v.activeSectionsMessage', "Choose an option to view student progress.");
-        }
-        else {
-            cmp.set('v.activeSectionsMessage', "You are viewing: " + openSections.join(', '));
-        }
+        action.setCallback(this, $A.getCallback(function (response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                cmp.set('v.mydata', response.getReturnValue());
+            } else if (state === "ERROR") {
+                var errors = response.getError();
+                console.error(errors);
+            }
+        }));
 
+        $A.enqueueAction(action);
+    },
+
+    getHonorData : function(cmp){
+
+        var action = cmp.get('c.getHonorRoll');
+
+        action.setCallback(this, $A.getCallback(function (response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                console.log(response.getReturnValue());
+                cmp.set('v.myhonordata', response.getReturnValue());
+            } else if (state === "ERROR") {
+                var errors = response.getError();
+                console.error(errors);
+            }
+        }));
+
+        $A.enqueueAction(action);
     }
+
+    
 })
