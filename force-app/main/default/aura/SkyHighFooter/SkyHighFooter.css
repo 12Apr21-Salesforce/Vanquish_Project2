@@ -1,0 +1,13 @@
+.THIS.footer {
+    font-size: 1em;
+    font-family: Lato;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    /* margin: 10px; */
+    background-color: #f9b643;
+    width: 100%;
+    /* text-transform: uppercase; */
+    font-weight: 500;
+    border: 1px solid black;
+}
