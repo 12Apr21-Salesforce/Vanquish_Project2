@@ -9,12 +9,7 @@
     background-color: gold;
     width: 100%;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight:700;
     border: 1px solid black;
-}
-
-.THIS.activeMessage {
-
-    padding: 5px 10px;
-
+    
 }

@@ -1,25 +1,24 @@
 <aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
 
-<!-- Add Banner to top of Aura Page -->
-    <div class="gradBanner">
+<!-- Add Banner to top of Aura Page
+   	<div class="gradBanner">
         <img src="{!$Resource.GradProgressFinal}"/>
     </div>
 
-    <h1 class="title">Current Student Progress</h1>
+   	<h1 class="title">Current Student Progress</h1>
 
     <lightning:card>
         <lightning:layout>
-              <!-- Put report charts here -->
+              Put report charts here 
         </lightning:layout>
-    </lightning:card>
-
+    </lightning:card> -->
 
     <h1 class="title">Sky High Students</h1>
     
         <aura:attribute name="activeSections" type="List" default="['']" />
         <aura:attribute name="activeSectionsMessage" type="String" default="" />
     
-        <p>{! v.activeSectionsMessage }</p>
+        <p class="activeMessage">{! v.activeSectionsMessage }</p>
     
         <lightning:accordion
             allowMultipleSectionsOpen="true"
