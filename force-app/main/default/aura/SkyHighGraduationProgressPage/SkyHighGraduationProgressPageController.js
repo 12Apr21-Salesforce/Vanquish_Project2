@@ -13,6 +13,7 @@
     },
 
     init: function (cmp, event, helper) {
+        
         cmp.set('v.mycolumns', [
             {label: 'Student Name', fieldName: 'Name', type: 'text'},
             {label: 'Grade Level', fieldName: 'Grade_Level__c', type: 'Picklist'},
@@ -20,21 +21,18 @@
             //{label: 'Student Counselor', fieldName: 'Student_Counselor__c', type: 'Lookup'}
         ]),
 
+        cmp.set('v.mygradcolumns', [
+            {label: 'Student Name', fieldName: 'Name', type: 'text'},
+            {label: 'Grade Level', fieldName: 'Grade_Level__c', type: 'Picklist'},
+            {label: 'GPA', fieldName: 'GPA__c', type: 'Number'},
+            {label: 'Approved for Gradution', fieldName: 'Approved_for_Gradution__c', type: 'checkbox'},
+
+        ]),
 
         helper.getData(cmp);
         helper.getHonorData(cmp);
+        helper.getGradData(cmp);
 
     }
 
-    // initH: function (cmp, event, helper) {
-    //     cmp.set('v.myhonorcolumns', [
-    //         {label: 'Student Name', fieldName: 'Name', type: 'text'},
-    //         {label: 'Grade Level', fieldName: 'Grade_Level__c', type: 'Picklist'},
-    //         {label: 'GPA', fieldName: 'GPA__c', type: 'Number'},
-    //     ]),
-
-
-    //     helper.getHonorData(cmp);
-
-    // }
 })

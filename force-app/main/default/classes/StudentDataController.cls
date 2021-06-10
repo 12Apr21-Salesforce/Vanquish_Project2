@@ -18,5 +18,15 @@ public with sharing class StudentDataController {
         return honor;
 
     }
+
+    @AuraEnabled
+    public static List<Student__c> getGrads(){
+        
+        List<Student__c> grads = [SELECT Id, Name, GPA__c, Grade_Level__c, Approved_for_Gradution__c FROM Student__c
+                                    WHERE Approved_for_Gradution__c = true];
+
+        return grads;
+
+    }
         
 }

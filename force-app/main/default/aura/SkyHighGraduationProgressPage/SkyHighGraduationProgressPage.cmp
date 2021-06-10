@@ -12,13 +12,12 @@
 
         <!-- Honor Students Section Label Attributes -->
         <aura:attribute name="myhonordata" type="Object"/>
-        <aura:attribute name="myhonorcolumns" type="List"/>
 
-        <!-- Handler for All Students -->
+        <aura:attribute name="mygraddata" type="Object"/>
+        <aura:attribute name="mygradcolumns" type="List"/>
+
+        <!-- Handler for Students -->
         <aura:handler name="init" value="{! this }" action="{! c.init }"/>
-        
-        <!-- Handler for Honor -->
-        <!-- <aura:handler name="initH" value="{! this }" action="{! c.initH }"/> -->
     
         <p class="activeMessage">{! v.activeSectionsMessage }</p>
     
@@ -53,12 +52,17 @@
             </lightning:accordionSection>
 
             <lightning:accordionSection name="Graduating Students" label="Graduating Students">
-                    <p>This is the content area for section C.</p>
-                    <p>.</p>
-                    <p>.</p>
-                    <p>.</p>
-                    <p>The section height expands to fit your content.</p>
+
+                        <div style="height: 300px">
+                        <lightning:datatable
+                                keyField="Id"
+                                data="{! v.mygraddata }"
+                                columns="{! v.mygradcolumns }"
+                                hideCheckboxColumn="true"/>
+                        </div>
+
             </lightning:accordionSection>
+
         </lightning:accordion>
 
 
