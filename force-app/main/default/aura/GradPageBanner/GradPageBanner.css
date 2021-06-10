@@ -11,10 +11,5 @@
     text-transform: uppercase;
     font-weight: 700;
     border: 1px solid black;
-}
-
-.THIS.activeMessage {
-
-    padding: 5px 10px;
-
+    
 }

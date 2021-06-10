@@ -1,4 +1,3 @@
-<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
-
+<aura:component>
     here we go boys
-</aura:component>	
+</aura:component>
