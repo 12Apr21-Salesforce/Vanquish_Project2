@@ -22,8 +22,8 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>ryan@playful-narwhal-gejezo.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>ryan@playful-narwhal-gejezo.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>moonshine.machiavelli@cunning-badger-5qon70.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>moonshine.machiavelli@cunning-badger-5qon70.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <subdomain>vanquish-skyhigh-developer-edition</subdomain>
     <urlPathPrefix>skyhigh</urlPathPrefix>
