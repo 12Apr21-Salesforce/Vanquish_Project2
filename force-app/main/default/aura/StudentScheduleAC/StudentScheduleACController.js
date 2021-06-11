@@ -27,7 +27,6 @@
         helper.getMultiData(cmp,selectedRows);
         
     }
-
-
-   
+  
 })
+

@@ -26,6 +26,10 @@
                 <behavior>Readonly</behavior>
                 <field>Approved_Grad__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Counselor__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
