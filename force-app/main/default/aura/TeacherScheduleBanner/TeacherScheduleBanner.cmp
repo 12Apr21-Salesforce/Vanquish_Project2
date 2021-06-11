@@ -3,4 +3,4 @@
         <div class="teacherSchedules">
             <img src="{!$Resource.teacherSchedules}"/>
         </div>    
-</aura:component>	
+</aura:component>
