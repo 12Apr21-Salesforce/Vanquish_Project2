@@ -6,7 +6,7 @@
     <filters>
         <field>GPA__c</field>
         <operation>greaterThan</operation>
-        <value>3.49</value>
+        <value>2.99</value>
     </filters>
     <label>Honor Role</label>
 </ListView>

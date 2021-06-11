@@ -1,3 +1,69 @@
-<aura:component>
+<aura:component controller="CreateNewStudent" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="newStudent" type="Student__c" default="{ 'sobjectType': 'Student__c',
+                   'Name': '',
+                   'Grade_Level__c': '',
+                   'GPA__c': '',
+                   'Graduation_Date__c': ''}"/>
+    <aura:attribute name="stdObject" type="String" default="Student__c"/>
+    <aura:attribute name="gradeLevel" type="String" default="Grade_Level__c"/>
+    <aura:attribute name="gradeList" type="String[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
+    <lightning:layout class="slds-page-header slds-page-header_object-home">
+    <lightning:layoutitem>
+        <!--lightning:icon iconName="standard:scan_card" alternativeText="New Student"/-->
+        <lightning:layoutItem padding="horizontal-medium">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading_label"><b>Students</b></h1>
+                <h3 class="slds-text-heading_small">New Student</h3>
+            </div> 
+        </lightning:layoutItem>
+    
+    <!--/lightning:layout>
+    <lightning:layout-->
+        <lightning:layoutitem padding="around-small" >
+            <div aria-labelledby="newstudentform">
+                <fieldset class="slds-box slds-theme_default slds-container_small">
+                    <!--legend id="newstudentform" class="slds-text-heading_small slds-p-vertical_medium">Add New Student</legend-->
+                    <form class="slds-form_stacked">
+                        
+                        <lightning:input aura:id="studentform" label="Student Name" 
+                            name="studentname" value="{!v.newStudent.Name}" required="true"/>
+                        
+                        <lightning:select aura:id="studentform" label="Grade Level" 
+                            name="studentGrade" value="{!v.newStudent.Grade_Level__c}" >
+                            <aura:iteration items="{!v.gradeList}" var="grd">
+                                <option value="{!grd}" text="{!grd}"/>
+                            </aura:iteration>
+                        </lightning:select> 
+                        
+                        <lightning:input type="Number" aura:id="studentform" label="GPA" 
+                            name="studentGPA" value="{!v.newStudent.GPA__c}" required="true" step="0.01"/>
+                        
+                        <lightning:input type="Date" aura:id="studentform" label="Graduation Date" 
+                            name="studentGDate" value="{!v.newStudent.Graduation_Date__c}" required="true"/>
+                            
+                            <!--lightning:recordEditForm objectApiName="Student_Counselor__c"> 
+                                <lightning:inputField fieldName="Student_Counselor__c" label="Student Counselor" /> 
+                              </lightning:recordEditForm--> 
+
+                            <lightning:input type="String" aura:id="studentform" label="Parent First Name" 
+                            name="PatentFN" value="{!v.newStudent.Parent_First_Name__c}"/>
+
+                            <lightning:input type="String" aura:id="studentform" label="Parent Last Name" 
+                            name="ParentLN" value="{!v.newStudent.Parent_Last_Name__c}" />
+
+                            <lightning:input type="Email" aura:id="studentform" label="Parent Email" 
+                            name="ParentEmail" value="{!v.newStudent.Parent_Email__c}"/>
+
+                        
+                        <lightning:button label="Save" class="slds-m-top_medium" variant="brand"
+                                onclick="{!c.saveStudent}"/>
+                        </form>
+                </fieldset>
+            </div>
+        </lightning:layoutitem>
+  
+    </lightning:layoutitem>
+    </lightning:layout>
 </aura:component>
