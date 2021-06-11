@@ -22,9 +22,9 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>vvskgarapati23@brave-shark-lkvi5n.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>vvskgarapati23@brave-shark-lkvi5n.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>ryan@playful-narwhal-gejezo.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>ryan@playful-narwhal-gejezo.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>skyhigh1-developer-edition</subdomain>
+    <subdomain>vanquish-skyhigh-developer-edition</subdomain>
     <urlPathPrefix>SkyHighDeuce</urlPathPrefix>
 </CustomSite>
