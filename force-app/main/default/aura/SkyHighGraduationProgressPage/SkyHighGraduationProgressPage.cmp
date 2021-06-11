@@ -1,0 +1,69 @@
+<aura:component controller="StudentDataController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+    <h1 class="title">Sky High Students</h1>
+    
+        <!-- Update Active Section Label Attributes -->
+        <aura:attribute name="activeSections" type="List" default="['']" />
+        <aura:attribute name="activeSectionsMessage" type="String" default="" />
+
+        <!-- All Students datatable attributes -->
+        <aura:attribute name="mydata" type="Object"/>
+        <aura:attribute name="mycolumns" type="List"/>
+
+        <!-- Honor Students Section Label Attributes -->
+        <aura:attribute name="myhonordata" type="Object"/>
+
+        <aura:attribute name="mygraddata" type="Object"/>
+        <aura:attribute name="mygradcolumns" type="List"/>
+
+        <!-- Handler for Students -->
+        <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+        <p class="activeMessage">{! v.activeSectionsMessage }</p>
+    
+        <lightning:accordion
+            allowMultipleSectionsOpen="true"
+            onsectiontoggle="{! c.handleSectionToggle }"
+            activeSectionName="{! v.activeSections }"
+        >
+            <lightning:accordionSection name="All Students" label="All Students">
+
+                    <!-- the container element determine the height of the datatable -->
+                    <div style="height: 300px">
+                        <lightning:datatable
+                                keyField="Id"
+                                data="{! v.mydata }"
+                                columns="{! v.mycolumns }"
+                                hideCheckboxColumn="true"/>
+                    </div>
+
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="Honor Roll Students" label="Honor Roll Students">
+
+                        <div style="height: 300px">
+                        <lightning:datatable
+                                keyField="Id"
+                                data="{! v.myhonordata }"
+                                columns="{! v.mycolumns }"
+                                hideCheckboxColumn="true"/>
+                        </div>
+
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="Graduating Students" label="Graduating Students">
+
+                        <div style="height: 300px">
+                        <lightning:datatable
+                                keyField="Id"
+                                data="{! v.mygraddata }"
+                                columns="{! v.mygradcolumns }"
+                                hideCheckboxColumn="true"/>
+                        </div>
+
+            </lightning:accordionSection>
+
+        </lightning:accordion>
+
+
+</aura:component>

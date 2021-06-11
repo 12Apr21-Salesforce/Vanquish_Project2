@@ -70,6 +70,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CreateNewStudent</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DOWm</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -259,16 +263,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Student_Couselor__c.Education__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Student_Couselor__c.Legacy_Student_Conselor__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Student__c.Approved_Grad__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -343,9 +337,6 @@
         <layout>Junction_Club__c-Junction-Club Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Student_Couselor__c-Student Counselor Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Student__c-SC-Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -404,15 +395,6 @@
         <modifyAllRecords>true</modifyAllRecords>
         <object>Junction_Club__c</object>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Student_Couselor__c</object>
-        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -570,10 +552,6 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>New_Student</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>Student_Couselor__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

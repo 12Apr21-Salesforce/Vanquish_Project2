@@ -43,9 +43,9 @@
                         <lightning:input type="Date" aura:id="studentform" label="Graduation Date" 
                             name="studentGDate" value="{!v.newStudent.Graduation_Date__c}" required="true"/>
                             
-                            <lightning:recordEditForm objectApiName="Student_Counselor__c"> 
+                            <!--lightning:recordEditForm objectApiName="Student_Counselor__c"> 
                                 <lightning:inputField fieldName="Student_Counselor__c" label="Student Counselor" /> 
-                              </lightning:recordEditForm> 
+                              </lightning:recordEditForm--> 
 
                             <lightning:input type="String" aura:id="studentform" label="Parent First Name" 
                             name="PatentFN" value="{!v.newStudent.Parent_First_Name__c}"/>
@@ -66,4 +66,4 @@
   
     </lightning:layoutitem>
     </lightning:layout>
-</aura:component>	
+</aura:component>
