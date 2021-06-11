@@ -21,7 +21,7 @@
         component.set("v.showAndTell", true) //this line enables the aura:if functionality
         component.set("v.currentTeacher", event.getParam("selectedRows")[0]) //this line sets the currentTeacher for reference in header in the aura:if
 
-        classList.setParams({tea: event.getParam("selectedRows")[0]})
+        classList.setParams({tea: event.getParam("selectedRows")[0]}) 
 
         classList.setCallback(this, function(response){
             if(response.getState() === "SUCCESS") {
@@ -37,7 +37,7 @@
 
     //used to change the daily schedule based on the select drop picklist containing days of the week
     changeDailyList: function(component, event) {
-        let dailyList = component.get("c.getTodayMeetingTimes")
+        let dailyList = component.get("c.getTodayMeetingTimes") 
 
         dailyList.setParams({tea: component.find('teacherTable').getSelectedRows()[0],
                             day: component.find('selectDay').get("v.value")})

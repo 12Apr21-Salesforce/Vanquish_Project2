@@ -36,16 +36,4 @@ public with sharing class AuraApexController {
             throw new AuraHandledException(e.getMessage());
         }
     }
-
-
-
-    // @AuraEnabled
-    // public static void getClasses(Teacher__c tea){
-    //     try {
-    //         TeacherExtension.<init>(tea);
-            
-    //     } catch (Exception e) {
-    //         throw new AuraHandledException(e.getMessage());
-    //     }
-    // }
 }

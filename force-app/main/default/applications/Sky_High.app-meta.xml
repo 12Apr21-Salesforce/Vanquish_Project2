@@ -32,6 +32,7 @@
     <tabs>Student_Schedules</tabs>
     <tabs>New_Student</tabs>
     <tabs>Teacher_Schedule</tabs>
+    <tabs>University__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Sky_High_UtilityBar</utilityBar>
 </CustomApplication>
