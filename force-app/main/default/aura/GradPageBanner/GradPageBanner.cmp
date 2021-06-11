@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+	
+    <div class="gradBanner">
+        <img src="{!$Resource.GradProgressFinal}"/>
+    </div>
+    
+    <h1 class="title">Current Student Progress</h1>
+    
+</aura:component>
