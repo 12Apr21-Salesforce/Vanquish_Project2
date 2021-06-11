@@ -1,3 +1,31 @@
-<aura:component>
+<aura:component controller="StudentScheduleApex" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+    <h1 class = "title"> Students </h1>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    
+    <aura:attribute name="data2" type="Object"/>
+    <aura:attribute name="columns2" type="List"/>
+
+    <aura:handler name="init" value="{!this }" action="{!c.init }"/>
+    <!--use a checkbox enabled data table on the list table so as to allow multiple student displays-->
+    <div style="height: 300px">
+    <lightning:datatable
+                keyField="id"
+                data="{!v.data }"
+                columns="{!v.columns }"
+                
+                onrowselection="{!c.addListView}"/>
+
+    </div>
+
+    <div style="height: 300px">
+        <lightning:datatable
+                    keyField="id"
+                    data="{!v.data2 }"
+                    columns="{!v.columns2 }"
+                    hideCheckboxColumn="true"/>
+    
+        </div>
 
 </aura:component>	
