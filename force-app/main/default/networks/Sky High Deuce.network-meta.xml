@@ -5,7 +5,7 @@
     <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
     <communityRoles/>
     <disableReputationRecordConversations>true</disableReputationRecordConversations>
-    <emailSenderAddress>alden.towler@mindful-hawk-ddbxue.com</emailSenderAddress>
+    <emailSenderAddress>ryan@playful-narwhal-gejezo.com</emailSenderAddress>
     <emailSenderName>Sky High Deuce</emailSenderName>
     <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
     <enableDirectMessages>true</enableDirectMessages>
@@ -31,10 +31,10 @@
         <permissionSet>Lightning_Experience_User</permissionSet>
         <permissionSet>P_Set</permissionSet>
         <permissionSet>SC_Set</permissionSet>
-        <profile>admin</profile>
+        <profile>Custom-SC</profile>
         <profile>Custom-Teacher</profile>
         <profile>Principal</profile>
-        <profile>Custom-SC</profile>
+        <profile>admin</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
@@ -47,7 +47,7 @@
     <selfRegistration>false</selfRegistration>
     <sendWelcomeEmail>true</sendWelcomeEmail>
     <site>Sky_High_Deuce</site>
-    <status>UnderConstruction</status>
+    <status>Live</status>
     <tabs>
         <defaultTab>home</defaultTab>
         <standardTab>Chatter</standardTab>
