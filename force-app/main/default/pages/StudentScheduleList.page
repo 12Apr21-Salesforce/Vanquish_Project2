@@ -17,7 +17,7 @@
                 <apex:column style="font-family: monospace; font-size: 2em"><apex:facet name="header">Student Name</apex:facet><apex:outputField value="{!s.name}"/></apex:column>
                 <apex:column style="font-family: monospace; font-size: 2em"><apex:facet name="header">Grade Level</apex:facet><apex:outputField value="{!s.Grade_Level__c}"/></apex:column>
                 <!--apex:column><button onclick="window.location.href='https://skyhighschool1.force.com/StudentSchedule?id=a0M5e000000uxOBEAY';">View Schedule</button></apex:column-->
-                <apex:column style="font-family: monospace; font-size: 2em"><a href="https://skyhighschool1.force.com/StudentSchedule?id={!s.Id}" style="color: #0cf232">{!s.name}'s Schedule</a></apex:column>
+                <apex:column style="font-family: monospace; font-size: 2em"><a href="https://aldensdonotsteal-developer-edition.na162.force.com/skyhigh/StudentSchedule?id={!s.Id}" style="color: #0cf232">{!s.name}'s Schedule</a></apex:column>
             </apex:pageBlockTable>
             <br/>
             <br/>
