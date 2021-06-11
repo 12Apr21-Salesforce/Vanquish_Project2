@@ -77,12 +77,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Student_Couselor__c.Education__c</field>
+        <field>Student_Counselor__c.Education__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Student_Couselor__c.Legacy_Student_Conselor__c</field>
+        <field>Student_Counselor__c.Legacy_Student_Conselor__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
