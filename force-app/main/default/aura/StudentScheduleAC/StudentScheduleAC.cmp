@@ -6,6 +6,8 @@
     
     <aura:attribute name="data2" type="Object"/>
     <aura:attribute name="columns2" type="List"/>
+    <aura:attribute name="Today" type="Object"/>
+
 
     <aura:handler name="init" value="{!this }" action="{!c.init }"/>
     <!--use a checkbox enabled data table on the list table so as to allow multiple student displays-->
