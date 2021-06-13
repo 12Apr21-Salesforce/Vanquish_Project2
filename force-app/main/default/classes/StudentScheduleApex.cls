@@ -49,7 +49,7 @@ public with sharing class StudentScheduleApex {
             for(Junction_Class__c jc: fred.Junctions__r){
 
                 neuc.add(c.get(jc.Class__c));
-
+            
             } 
             m.put(fred.Name, neuc);
 

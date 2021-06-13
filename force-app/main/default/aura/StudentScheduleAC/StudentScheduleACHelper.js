@@ -1,11 +1,13 @@
 ({
+
+    
+
     get2Day: function(cmp) {
       
         var action = cmp.get('c.getToday');
         action.setCallback(this, $A.getCallback(function (response) {
             var state = response.getState();
             if (state === "SUCCESS") {
-                //console.log("today is " + response.getReturnValue());
                 cmp.set('v.Today', response.getReturnValue());
 
             } else if (state === "ERROR") {
@@ -27,9 +29,10 @@
             var state = response.getState();
             if (state === "SUCCESS") {
                 
-                
+               
                 //*
                 for(let x in response.getReturnValue()){
+                    //console.log(response.getReturnValue()[x]);
                         let data2 = {
 
                             Name: response.getReturnValue()[x].Name,
@@ -57,9 +60,10 @@
     getScheduleData : function(cmp, studentName) {
         
 
-        //console.log("name2 = " + studentName);
+    
         let data = []
         let stuindex;
+        let loop_exlusion_counter = true;
 
         let StudentNames = []
         for(let i in studentName){
@@ -70,59 +74,104 @@
 
         }
 
-        //console.log("names = " + StudentNames);
-
+    
         // currently retreieves a list of all students with a subquery to get all thier junction classes
         var action = cmp.get('c.getSchedule');
         action.setParams({ stu : StudentNames});
 
-        action.setCallback(this, $A.getCallback(function (response) {
+        action.setCallback(this, function (response) {
             var state = response.getState();
             if (state === "SUCCESS") {
                 
-                //console.log("arhoy" + response.getReturnValue());
                 for(let x in response.getReturnValue()){
                     
                         
                         stuindex = StudentNames.indexOf(x);
-                      
-                        //console.log("n: " + studentName[stuindex].Student_total.Name + " g: " + studentName[stuindex].Student_total.GPA__c)
-                        // this push gives us the name above the schedule
-                        // use the string x returned to find the corresponding student in studentName, which is selectedrows, 
-                        // the use that student info to fill in the student sector
                         data.push({Name: x,
                                    grade_lvl: studentName[stuindex].Student_total.Grade_Level__c,
                                    GPA: studentName[stuindex].Student_total.GPA__c,
-                                   counselor: studentName[stuindex].Student_total.Student_Counselor__c,
-                                   Grad_Approved: studentName[stuindex].Student_total.Approved_For_Gradution__c,
+                                   Counselor: studentName[stuindex].Student_total.Student_Counselor__c,
+                                   Grad_Approved: studentName[stuindex].Student_total.Approved_for_Gradution__c,
                                    Grad_Date: studentName[stuindex].Student_total.Graduation_Date__c
                         });
-                        // push in a spacer x-axis for the schedule
-                        data.push({
-                                Name: "Classes",
-                                grade_lvl: "Day",
-                                GPA:"Start Time",
-                                Counselor: "End Time"
-                        });
+
+                        
+                  
+                        
+
+                        
                     
                         // this for loop populates the schedule
+                       if(cmp.get('v.class2dayonly')){
+                                for(let y in response.getReturnValue()[x] ){
 
-                       
+                                    
+                                    
+
+                                    if(response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].Day__c == cmp.get('v.Today')){
+
+                                        if(loop_exlusion_counter){
+                                            data.push({
+                                                GPA: x + "'s Clases", 
+                                                Counselor: "for: " + cmp.get('v.Today'),
+                                                Grad_Date: "class"
+                                                
+                                            });
+                                        }
+                                            loop_exlusion_counter = false;
+
+
+                                        let junction_classes = {
+                                                
+                                            Counselor: response.getReturnValue()[x][y].Name,
+                                            Start: response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].Start_Time__c,                        
+                                            End: response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].End_Time__c
+                                        }
+                                    
+
+                                        data.push(junction_classes);
+                                    }
+
+                                    if(loop_exlusion_counter){
+
+                                        data.push({
+                                            GPA:"no classes", 
+                                            Counselor: "on " + cmp.get('v.Today'),
+                                          
+                                            
+                                        }); 
+
+                                    }
+                                    loop_exlusion_counter = false;
+                            }
+                    }else{
                         for(let y in response.getReturnValue()[x] ){
 
-                            console.log(response.getReturnValue()[x][y].Class_Meeting_Times1__r[0]);
-                        let junction_classes = {
+                            if(loop_exlusion_counter){
+                                data.push({
+                                    GPA: x + "'s Clases", 
+                                    Counselor: "Classes",
+                                    Grad_Date: "Day",
+                                   
+                                });
+                            }
+                            loop_exlusion_counter = false;
                                 
-                            Name: response.getReturnValue()[x][y].Name,
-                            grade_lvl:response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].Day__c, 
-                            GPA:response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].Start_Time__c,
-                            Counselor: response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].End_Time__c,                        
-                            Date: response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].End_Time__c
-                        }
+                            let junction_classes = {
+                                    
+                                Counselor: response.getReturnValue()[x][y].Name,
+                                Grad_Date:response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].Day__c, 
+                                Start: response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].Start_Time__c,                        
+                                End: response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].End_Time__c
+                            }
 
-                        data.push(junction_classes);
-                      }
-                    
+                            data.push(junction_classes);
+                        } //end of for loop
+
+                   } // end of else
+                      // space out the entries
+                      data.push({});
+                      loop_exlusion_counter = true;
                 }
                 //*/
 
@@ -134,22 +183,10 @@
                 var errors = response.getError();
                 console.error(errors);
             }
-        }));
+        });
         $A.enqueueAction(action);
     },
 
-    getMultiData : function(cmp, bulkStudents) {
-
-        //console.log("alhoy " + bulkStudents.length + " 0 = " + bulkStudents[0].Name );
-        
-        for(let x in bulkStudents){
-            
-            this.getScheduleData(cmp, bulkStudents[x].Name);
-
-        }
-
-
-
-    }
+   
 
 })

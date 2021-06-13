@@ -10,11 +10,14 @@
             {label: 'Student', fieldName: 'Name', type: 'Student__c'},
             //* //labels for the student info fields
             {label: 'Grade Level', fieldName: 'grade_lvl', type: 'text'},
+            {label: 'Approved For Graduation', fieldName: 'Grad_Approved', type: 'boolean'}, 
             {label: 'GPA', fieldName: 'GPA', type: 'text'},  
             {label: 'Student Counselor', fieldName: 'Counselor', type: 'text'}, 
-            {label: 'Approved For Graduation', fieldName: 'Grad_Approved', type: 'text'}, 
             {label: 'Graduation Date', fieldName: 'Grad_Date', type: 'text'},
-            {label: 'Date', fieldName: 'Date', type: 'date', typeAttributes: {weekday: "long",
+            {fieldName: 'Start', type: 'date', typeAttributes: {hour: "2-digit" , minute: "2-digit"} },
+            {fieldName: 'End', type: 'date', typeAttributes: {hour: "2-digit" , minute: "2-digit"} },
+            /*
+            , typeAttributes: {weekday: "long",
             year: "numeric",
             month: "long",
             day: "2-digit"}},
@@ -46,8 +49,16 @@
 
             cmp.set('v.data2', []);
         }
-    }
+    },
 
+    handleClick: function(cmp, event, helper) {
+      
+        var selectedRows = cmp.find("datable").getSelectedRows();
+        cmp.set('v.class2dayonly', !cmp.get('v.class2dayonly'));
+        helper.getScheduleData(cmp, selectedRows);
+        // add a bit to triger rerender of table 2
+
+    }
 
    
 })
