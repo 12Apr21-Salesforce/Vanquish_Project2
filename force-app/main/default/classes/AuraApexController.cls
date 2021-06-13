@@ -18,12 +18,14 @@ public with sharing class AuraApexController {
                 Start_Time__c, End_Time__c, Duration__c, Day__c  FROM Class_Meeting_Time__c WHERE Class__r.Teacher__c=:id ORDER BY Day__c];
             System.debug(weeklyMeetings);
             return weeklyMeetings;
+
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
     }
 
     @AuraEnabled
+
     public static List<Class_Meeting_Time__c> getTodayMeetingTimes(Teacher__c tea, String day){
         try {
             String id = tea.id;
@@ -32,6 +34,7 @@ public with sharing class AuraApexController {
                 WHERE Class__r.Teacher__c=:id AND Day__c=:day ORDER BY Start_Time__c];
                 system.debug(dailyMeetings);
             return dailyMeetings;
+
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
