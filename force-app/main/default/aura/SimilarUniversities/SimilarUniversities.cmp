@@ -1,0 +1,52 @@
+<aura:component controller="MyUniversityController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+        <aura:attribute name="recordId" type="Id"/>
+        <aura:attribute name="similarUniversities" type="Object[]"/>
+        <aura:attribute name="university" type="University__c"/>
+        <aura:attribute name="searchCriteria" type="String" default="GPA"/>
+        <aura:attribute name="rangeGPA" type="String" default=".50"/>
+
+        <aura:handler event="c:infoUpdated" action="{!c.doInit}"/>
+        <aura:handler name="init" value="{! this}" action="{!c.doInit}"/>
+
+        <force:recordData aura:id="universityService"
+            recordId="{!v.recordId}"
+            targetRecord="{!v.university}"
+            recordUpdated="{!c.doInit}"
+            layoutType="FULL"/>
+
+        <lightning:card iconName="custom:custom85" title="{! 'Similar Universities by ' + v.searchCriteria}" class="slds-is-relative">
+
+            <div class="slds-var-p-left_medium slds-var-p-right_medium">
+
+                <ul class="slds-list_vertical slds-has-dividers_top-space">
+
+                    <aura:if isTrue="{!v.similarUniversities.length &gt; 0}">
+
+                        <aura:iteration items="{!v.similarUniversities}" var="item">
+
+                            <li class="slds-list__item">
+                                <c:MatchingUniversity university="{!item}"/>
+                            </li>
+
+                        </aura:iteration>
+
+                        <aura:set attribute="else">
+
+                            <li class="slds-list__item">
+                                <h3 class="slds-text-color_error">No similar universities found.</h3>
+                            </li>
+
+                        </aura:set>
+
+                    </aura:if>
+
+                </ul>
+
+            </div>
+
+            <lightning:spinner aura:id="spinner" variant="brand" size="large"/>
+
+        </lightning:card>
+        
+</aura:component>	
