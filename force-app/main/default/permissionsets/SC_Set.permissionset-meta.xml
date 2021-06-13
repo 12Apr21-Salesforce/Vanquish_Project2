@@ -7,6 +7,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Class_Meeting_Time__c.Campus_Location__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Class_Meeting_Time__c.Class_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -28,6 +33,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Class_Meeting_Time__c.Start_Time__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Class_Meeting_Time__c.Teacher__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -73,26 +83,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Club__c.Legacy_Club_Id__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Student_Counselor__c.Education__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Student_Counselor__c.Legacy_Student_Conselor__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Student_Couselor__c.Education__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Student_Couselor__c.Legacy_Student_Conselor__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -181,7 +171,7 @@
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Student_Counselor__c</object>
+        <object>Student_Couselor__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -203,7 +193,7 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>
-        <tab>Student_Counselor__c</tab>
+        <tab>Student_Couselor__c</tab>
         <visibility>Available</visibility>
     </tabSettings>
 </PermissionSet>
