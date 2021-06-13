@@ -28,9 +28,5 @@
 
         menuSelectEvent.fire()
     }
-<<<<<<< HEAD
 
 })
-=======
-})
->>>>>>> origin/main

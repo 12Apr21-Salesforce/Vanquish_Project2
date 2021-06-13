@@ -11,6 +11,12 @@
         $A.enqueueAction(action);
     },
 
+    resetForm: function(cmp, event, helper) {
+        cmp.find('field').forEach(function(f) {
+            f.reset();
+        });
+    },
+/*
     doInit : function(component, event, helper){
         var action = component.get('c.getPickList');
         action.setParams({
@@ -23,14 +29,5 @@
         });
         $A.enqueueAction(action);
     },
-
-    StuCouncellor : function(component, event, helper) {        
-        var lookupId = event.getParam("value")[0];
-    },
-/*    handleSuccess : function(component, event, helper) {
-        var record = event.getParam("response");
-        var apiName = record.apiName; // returns "Case"
-        var caseId = record.id; // returns the Id of the new record
-    },
-    */
+*/
 })

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <aura:component controller="AuraApexController" 
     implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" 
     access="global">
@@ -48,8 +47,3 @@
         </aura:if>
 
 </aura:component>
-=======
-<aura:component>
-    here we go boys
-</aura:component>
->>>>>>> origin/main

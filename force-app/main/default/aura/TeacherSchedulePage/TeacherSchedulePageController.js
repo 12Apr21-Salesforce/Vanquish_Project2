@@ -3,7 +3,6 @@
         helper.doInit(cmp)
     },
 
-<<<<<<< HEAD
     showScheduleButton : function(cmp, event, helper) {
         helper.showScheduleButton(cmp)
     },
@@ -14,7 +13,3 @@
 
     
 })
-=======
-    }
-})
->>>>>>> origin/main
