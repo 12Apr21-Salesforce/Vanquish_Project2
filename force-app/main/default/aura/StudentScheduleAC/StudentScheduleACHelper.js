@@ -189,6 +189,18 @@
         $A.enqueueAction(action);
     },
 
-   
+    getMultiData : function(cmp, bulkStudents) {
 
+        console.log("alhoy " + bulkStudents.length + " 0 = " + bulkStudents[0].Name );
+        
+        for(let x in bulkStudents){
+            
+            This.getScheduleData(cmp, bulkStudents[x].Name);
+
+        }
+
+
+
+    }
 })
+

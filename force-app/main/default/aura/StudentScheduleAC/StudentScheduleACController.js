@@ -43,22 +43,8 @@
 
         helper.getScheduleData(cmp, selectedRows);
         
-        //helper.getMultiData(cmp,selectedRows);
-        }else{
-
-
-            cmp.set('v.data2', []);
-        }
-    },
-
-    handleClick: function(cmp, event, helper) {
-      
-        var selectedRows = cmp.find("datable").getSelectedRows();
-        cmp.set('v.class2dayonly', !cmp.get('v.class2dayonly'));
-        helper.getScheduleData(cmp, selectedRows);
-        // add a bit to triger rerender of table 2
-
     }
-
-   
+    }
+  
 })
+

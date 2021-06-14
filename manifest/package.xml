@@ -89,7 +89,7 @@
         <members>Class__c</members>
         <members>Club__c</members>
         <members>Student__c</members>
-        <members>Student_Couselor__c</members>
+        <members>Student_Counselor__c</members>
         <members>Campus__c</members>
         <members>Teacher__c</members>
         <members>Gard_Progress</members>
@@ -105,7 +105,7 @@
         <members>Junction_Class__c</members>
         <members>Junction_Club__c</members>
         <members>Student__c</members>
-        <members>Student_Couselor__c</members>
+        <members>Student_Counselor__c</members>
         <members>Campus__c</members>
         <members>Teacher__c</members>
         <members>Class_Meeting_Time__c</members>
@@ -141,7 +141,7 @@
         <members>Junction_Club__c-Junction-Club Layout</members>
         <members>Student__c-SC-Layout</members>
         <members>Student__c-Student Layout</members>
-        <members>Student_Couselor__c-Student Counselor Layout</members>
+        <members>Student_Counselor__c-Student Counselor Layout</members>
         <members>Teacher__c-Teacher Layout</members>
         <name>Layout</name>
     </types>
@@ -179,7 +179,7 @@
         <members>Campus__c</members>
         <members>Club__c</members>
         <members>Student__c</members>
-        <members>Student_Couselor__c</members>
+        <members>Student_Counselor__c</members>
         <members>Teacher__c</members>
         <name>SharingRules</name>
     </types>

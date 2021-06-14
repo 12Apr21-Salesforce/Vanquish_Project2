@@ -23,7 +23,7 @@
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
     <tabs>Teacher__c</tabs>
-    <tabs>Student_Couselor__c</tabs>
+    <tabs>Student_Counselor__c</tabs>
     <tabs>Student__c</tabs>
     <tabs>Class__c</tabs>
     <tabs>Club__c</tabs>

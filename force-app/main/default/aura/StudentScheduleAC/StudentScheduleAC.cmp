@@ -34,4 +34,4 @@
         <lightning:button variant="brand" label="Show Student Schedule by Day"  onclick="{!c.handleClick }" />
     
 
-</aura:component>	
+</aura:component>
