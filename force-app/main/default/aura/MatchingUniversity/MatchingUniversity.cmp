@@ -2,7 +2,7 @@
 
     <aura:attribute name="university" type="University__c"/>
 
-    <aura:registerEvent name="inforUpdated" type="c:InfoUpdated"/>
+    <aura:registerEvent name="inforUpdated" type="c:infoUpdated"/>
 
     <lightning:recordViewForm aura:id="viewForm" recordId="{!v.university.Id}" objectApiName="University__c">
 

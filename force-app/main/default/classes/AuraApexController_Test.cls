@@ -34,7 +34,7 @@ public with sharing class AuraApexController_Test {
 
     }
 
-            
+         
         //single case test
         @isTest
         private static void test1() {

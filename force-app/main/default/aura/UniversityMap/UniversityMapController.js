@@ -171,12 +171,12 @@
 
     cmp.set('v.markersTitle', 'United States Universities');
 
-        cmp.set('v.mapOptions', {
-            draggable: false, 
-            disableDefaultUI: true,
-            scrollwheel: false,
-            zoomControl: false 
-        })
+        // cmp.set('v.mapOptions', {
+        //     draggable: false, 
+        //     disableDefaultUI: true,
+        //     scrollwheel: false,
+        //     zoomControl: false 
+        // })
     },
 
     handleMarkerSelect: function (cmp, event, helper) {
