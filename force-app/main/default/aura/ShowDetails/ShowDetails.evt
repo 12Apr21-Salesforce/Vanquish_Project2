@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" >
+<aura:attribute name="student" type="String"></aura:attribute>
+<aura:attribute name="club" type="String"></aura:attribute>
+</aura:event>

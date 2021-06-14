@@ -1,0 +1,21 @@
+<aura:component controller="CreateNewStudent" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+
+
+<lightning:recordEditForm aura:id="recordEditForm"
+    objectApiName="Student__c">
+
+    <lightning:inputfield fieldName="Name" required="true"/>
+
+<lightning:inputField fieldName="Grade_Level__c" />
+
+<lightning:inputfield  fieldName="GPA__c" required="true" step="0.01"/>
+
+<lightning:inputfield  fieldName="Graduation_Date__c" required="true"/>
+    
+<lightning:inputField fieldName="Student_Counselor__c" />
+
+<lightning:button class="slds-m-top_small" type="submit" label="Create new" />
+</lightning:recordEditForm>
+
+</aura:component>
