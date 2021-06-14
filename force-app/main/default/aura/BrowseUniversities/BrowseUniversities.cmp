@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+    <!-- All Students datatable attributes -->
+    <aura:attribute name="mydata" type="Object"/>
+    <aura:attribute name="mycolumns" type="List"/>
+
+    <!-- Honor Students Section Label Attributes -->
+    <aura:attribute name="myhonordata" type="Object"/>
+
+    <lightning:tabset selectedTabId="allUniv">
+
+        <lightning:tab onactive="{! handleActive }" label="Universities" id="allUniv">
+
+            <div style="height: 300px">
+                <lightning:datatable
+                        keyField="Id"
+                        data="{! v.mydata }"
+                        columns="{! v.mycolumns }"
+                        hideCheckboxColumn="true"/>
+            </div>
+
+        </lightning:tab>
+
+        <lightning:tab onactive="{! handleActive }" label="Honor Roll Universities" id="honor">
+
+            <div style="height: 300px">
+                <lightning:datatable
+                        keyField="Id"
+                        data="{! v.myhonordata }"
+                        columns="{! v.mycolumns }"
+                        hideCheckboxColumn="true"/>
+                </div>
+
+        </lightning:tab>
+
+    </lightning:tabset>
+
+</aura:component>	

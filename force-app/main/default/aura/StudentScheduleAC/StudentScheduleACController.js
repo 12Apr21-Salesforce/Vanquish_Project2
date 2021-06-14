@@ -53,7 +53,7 @@
         helper.getScheduleData(cmp, selectedRows);
         
 
+
     }
   
 })
-

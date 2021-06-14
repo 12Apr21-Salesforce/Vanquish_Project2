@@ -1,0 +1,7 @@
+<design:component>
+    <sfdc:objects>
+        <sfdc:object>University__c</sfdc:object>
+    </sfdc:objects>
+    <design:attribute name="searchCriteria" label="Search By" datasource="Required GPA, Honor Roll Required" default="GPA" description="Search for similar universities based on what criteria?"/>
+    <design:attribute name="rangeGPA" label="GPA Range" default=".5" description="When searching by GPA, search using the GPA plus or minus this amount"/>
+</design:component>
