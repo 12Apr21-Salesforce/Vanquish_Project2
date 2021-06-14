@@ -5,10 +5,12 @@
 
     <c:TeacherScheduleBanner />
 
-    <aura:attribute name="teacherColumns" type="List" default="[{'label': 'Name', 'fieldName': 'Name'}]" />
+    <aura:attribute name="teacherColumns" type="List" default="[{'label': 'Name', 'fieldName': 'Name'},
+                                                                {'label': 'Email', 'fieldName': 'Email__c'}]" />
     <aura:attribute name="classesColumns" type="List" default="[{'label': 'Class', 'fieldName': 'Name'},
                                                                 {'label': 'Class Count', 'fieldName': 'Class_Count__c'}]" />
     <aura:attribute name="showAndTell" type="Boolean" default="false" />
+    <aura:attribute name="toggleEmail" type="Boolean" default="false" />
     <aura:attribute name="teachers" type="Teacher__c[]" />
     <aura:attribute name="currentTeacher" type="Teacher__c" />
     <aura:attribute name="currentClass" type="Class__c" />
@@ -28,17 +30,24 @@
                             hideTableHeader="true" onrowselection="{!c.teacherSelect}" />
     </div>
 
-<aura:if isTrue="{!v.showAndTell}">
+    
+    <lightning:button label="Compose Message" title="I want to send an email" onclick="{!c.handleEmail}" />
+    <aura:if isTrue="{!v.toggleEmail}" >
+        <lightning:button label="Hide Email Tab" title="Hides the email component" onclick="{!c.hideEmail}" />
+        <c:TeacherConnect />
+    </aura:if>
 
-    <p class="title">Showing Information for {!v.currentTeacher.Name}</p>
+    <aura:if isTrue="{!v.showAndTell}">
 
-        <lightning:accordion aura:id="accordionOuter">
-            
-            <lightning:accordionSection aura:id="roster" label="Select Class to Show Roster">
-                <div>
-                    <lightning:datatable aura:id="classTable" keyField="id" data="{!v.classRoster}" columns="{!v.classesColumns}" maxRowSelection="1"
-                                onrowselection="{!c.rosterSelect}" />
-                </div>
+        <p class="title">Showing Information for {!v.currentTeacher.Name}</p>
+
+            <lightning:accordion aura:id="accordionOuter">
+                
+                <lightning:accordionSection aura:id="roster" label="Select Class to Show Roster">
+                    <div>
+                        <lightning:datatable aura:id="classTable" keyField="id" data="{!v.classRoster}" columns="{!v.classesColumns}" maxRowSelection="1"
+                                    onrowselection="{!c.rosterSelect}" />
+                    </div>
 
                     <lightning:accordion aura:id="accordionInner">
                         <lightning:accordionSection aura:id="students" label="{!v.currentClass.Name}">

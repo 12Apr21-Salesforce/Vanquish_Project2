@@ -10,7 +10,7 @@ public with sharing class AuraApexController {
     @AuraEnabled
     public static List<Teacher__c> getTeachers(){
         try{
-            List<Teacher__c> totalList = [SELECT Name FROM Teacher__c]; 
+            List<Teacher__c> totalList = [SELECT Name, Email__c FROM Teacher__c]; 
             return totalList;
         } catch (Exception e) { throw new AuraHandledException(e.getMessage());}
 
@@ -66,4 +66,33 @@ public with sharing class AuraApexController {
         } catch (Exception e) { throw new AuraHandledException(e.getMessage());}
 
     }
+ 
+    @AuraEnabled 
+    public static void sendMailMethod(String mMail ,String mSubject ,String mbody){
+    
+        List<Messaging.SingleEmailMessage> mails =  new List<Messaging.SingleEmailMessage>();     
+
+        // Step 1: Create a new Email
+        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+        
+        // Step 2: Set list of people who should get the email
+        List<String> sendTo = new List<String>();
+        sendTo.add(mMail);
+        mail.setToAddresses(sendTo);
+        
+        // Step 3: Set who the email is sent from
+        mail.setReplyTo('natalie.clark@revature.net'); // change it with your mail address.
+        mail.setSenderDisplayName('Anonymous Message from Website'); 
+        
+        // Step 4. Set email contents - you can use variables!
+        mail.setSubject(mSubject);
+        mail.setHtmlBody(mbody);
+        
+        // Step 5. Add your email to the master list
+        mails.add(mail);
+        
+        // Step 6: Send all emails in the master list
+        Messaging.sendEmail(mails);
+    
+    }   
 }
