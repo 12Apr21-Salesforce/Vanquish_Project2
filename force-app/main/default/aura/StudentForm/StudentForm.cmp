@@ -1,3 +1,46 @@
-<aura:component>
+<aura:component 
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="newStudent" type="Student__c" default="{ 'sobjectType': 'Student__c',
+                   'Name': '',
+                   'Grade_Level__c': '',
+                   'GPA__c': '',
+                   'Graduation_Date__c': '',
+                'Student_Counselor__c':''}" />
+    <!--aura:attribute name="stdObject" type="String" default="Student__c"/>
+    <aura:attribute name="gradeLevel" type="String" default="Grade_Level__c"/>
+    <aura:attribute name="gradeList" type="String[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /-->
 
+    <lightning:layout class="slds-page-header slds-page-header_object-home">
+        <lightning:layoutitem>
+            <lightning:layoutItem padding="horizontal-medium">
+                <div class="page-section page-header">
+                    <h3 class="slds-text-heading_small">New Student</h3>
+                </div>
+            </lightning:layoutItem>
+
+            <lightning:layoutitem padding="around-medium">
+                <div aria-labelledby="newstudentform">
+                    <fieldset class="slds-box slds-theme_default slds-container_medium">
+                        <form class="slds-form_stacked">
+                            <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Student__c">
+                                <lightning:inputfield aura:id="field" fieldName="Name" required="true" />
+                                <lightning:inputField aura:id="field" fieldName="Grade_Level__c" />
+                                <lightning:inputfield aura:id="field" fieldName="GPA__c" required="true" step="0.01" />
+                                <lightning:inputfield aura:id="field" fieldName="Graduation_Date__c" required="true" />
+                                <lightning:inputField aura:id="field" fieldName="Student_Counselor__c" />
+                                <lightning:inputField aura:id="field" fieldName="Parent_First_Name__c" />
+                                <lightning:inputField aura:id="field" fieldName="Parent_Last_Name__c" />
+                                <lightning:inputField aura:id="field" fieldName="Parent_Email__c" />
+                                <lightning:button class="slds-m-top_small" label="Create new"  onclick="{!c.saveStudent}"
+                                    variant="brand" />
+                                <lightning:button class="slds-m-top_small" label="Reset" variant="brand"
+                                    onclick="{!c.resetForm}" />
+                            </lightning:recordEditForm>
+                        </form>
+                    </fieldset>
+                </div>
+            </lightning:layoutitem>
+        </lightning:layoutitem>
+    </lightning:layout>
 </aura:component>

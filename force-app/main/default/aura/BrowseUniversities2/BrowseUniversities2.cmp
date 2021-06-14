@@ -1,0 +1,52 @@
+<aura:component controller="UniversityDataController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    
+        <!-- Update Active Section Label Attributes -->
+        <aura:attribute name="activeSections" type="List" default="['']" />
+        <aura:attribute name="activeSectionsMessage" type="String" default="" />
+
+        <!-- All Students datatable attributes -->
+        <aura:attribute name="mydata" type="Object"/>
+        <aura:attribute name="mycolumns" type="List"/>
+
+        <!-- Honor Students Section Label Attributes -->
+        <aura:attribute name="myhonordata" type="Object"/>
+
+        <!-- Handler for Universities -->
+        <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+        <p class="activeMessage">{! v.activeSectionsMessage }</p>
+    
+        <lightning:accordion
+            allowMultipleSectionsOpen="true"
+            onsectiontoggle="{! c.handleSectionToggle }"
+            activeSectionName="{! v.activeSections }"
+        >
+            <lightning:accordionSection name="All Universities" label="All Universities">
+
+                    <!-- the container element determine the height of the datatable -->
+                    <div style="height: 300px">
+                        <lightning:datatable
+                                keyField="Id"
+                                data="{! v.mydata }"
+                                columns="{! v.mycolumns }"
+                                hideCheckboxColumn="true"/>
+                    </div>
+
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="Honor Roll Required" label="Honor Roll Required Universities">
+
+                        <div style="height: 300px">
+                        <lightning:datatable
+                                keyField="Id"
+                                data="{! v.myhonordata }"
+                                columns="{! v.mycolumns }"
+                                hideCheckboxColumn="true"/>
+                        </div>
+
+            </lightning:accordionSection>
+
+        </lightning:accordion>
+
+
+</aura:component>
