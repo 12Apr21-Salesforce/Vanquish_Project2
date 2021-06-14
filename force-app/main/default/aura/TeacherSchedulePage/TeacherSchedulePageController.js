@@ -1,4 +1,5 @@
 ({
+
     //initializes the dataTable with a list of teachers
     doInit : function(cmp, event, helper) {
         helper.doInit(cmp, event)
@@ -10,6 +11,14 @@
         helper.classRosterSet(cmp, event)
     },
 
+    handleEmail : function(cmp, event, helper) {
+        helper.handleEmail(cmp, event)
+    },
+
+    hideEmail : function(cmp, event, helper) {
+        helper.hideEmail(cmp, event)
+    },
+
     //changes the student list on selection of class
     rosterSelect : function(cmp, event, helper) {
         helper.rosterSelect(cmp, event)
@@ -19,4 +28,5 @@
     changeDailyList : function(cmp, event, helper) {
         helper.changeDailyList(cmp, event)
     },
+
 })

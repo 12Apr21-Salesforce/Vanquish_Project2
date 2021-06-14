@@ -1,4 +1,5 @@
 ({
+
     //initializes the list of teachers in the datatable at the top of the page, and sets the class list for later reference
     doInit : function(component, event) {
         var teachers = component.get("c.getTeachers")
@@ -34,6 +35,14 @@
         })
 
         $A.enqueueAction(classList)
+    },
+
+    handleEmail: function(component, event) {
+        component.set("v.toggleEmail", true) 
+    },
+
+    hideEmail: function(component, event) {
+        component.set("v.toggleEmail", false)
     },
 
     //sets the list of classes to display for selection, that don't repeat due to multiple class times
@@ -92,4 +101,5 @@
 
         $A.enqueueAction(classes)
     },
+
 })

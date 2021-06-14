@@ -41,22 +41,15 @@
         <name>LightningComponentBundle</name>
     </types>
     <types>
-        <!--<members>Grad_Progress</members>
-        <members>New_Student</members>
-        <members>Student_Schedule</members>
-        <members>Teacher_Schedule</members>-->
-        <members>Sky_High_Deuce</members>
-        <members>Sky_High</members>
+        <members>*</members>
         <name>CustomSite</name>
     </types>
     <types>
-        <members>Sky_High_Deuce1</members>
-        <members>Sky_High1</members>
+        <members>*</members>
         <name>SiteDotCom</name>
     </types>
     <types>
-        <members>Sky High Deuce</members>
-        <members>Sky High</members>
+        <members>*</members>
         <name>Network</name>
     </types>
     <types>
@@ -81,10 +74,6 @@
         <members>*</members>
         <name>CustomApplicationComponent</name>
     </types>
-    <!--<types>
-        <members>*</members>
-        <name>CustomField</name>
-	</types>-->
     <types>
         <members>Class__c</members>
         <members>Club__c</members>
@@ -113,7 +102,7 @@
         <name>CustomObject</name>
     </types>
     <types>
-        <members>Sky_High</members>
+        <members>*</members>
         <name>CustomApplication</name>
     </types>
     <types>
@@ -188,7 +177,6 @@
         <members>Club__c</members>
         <members>Student__c</members>
         <members>Teacher__c</members>
-        <!--<members>Delete_Merchandise_Record</members>-->
         <name>Workflow</name>
     </types>
     <types>
@@ -222,8 +210,7 @@
         <name>WorkflowFieldUpdate</name>
     </types>
     <types>
-        <members>Sky_High_Home</members>
-        <members>Sky_High_UtilityBar</members>
+        <members>*</members>
         <name>FlexiPage</name>
     </types>
     <types>

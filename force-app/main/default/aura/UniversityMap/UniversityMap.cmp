@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="markersTitle" type="String"/>
+    <!-- <aura:attribute name="mapOptions" type="Object"/> -->
+    <aura:attribute name="selectedMarkerValue" type="String" default="U1" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <div>Selected Marker Value is {!v.selectedMarkerValue}</div>
+
+    <lightning:map
+        mapMarkers="{!v.mapMarkers}"
+        markersTitle="{!v.markersTitle}"
+        onmarkerselect="{!c.handleMarkerSelect}"
+        selectedMarkerValue="{!v.selectedMarkerValue}"
+        zoomLevel="7"/>
+</aura:component>
