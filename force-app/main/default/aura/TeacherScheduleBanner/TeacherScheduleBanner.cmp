@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">>
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
         <!-- Add Banner to top of Aura Page -->
         <div class="teacherSchedules">
             <img src="{!$Resource.teacherSchedules}"/>
