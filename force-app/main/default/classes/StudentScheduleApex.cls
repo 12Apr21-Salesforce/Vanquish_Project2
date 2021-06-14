@@ -3,7 +3,7 @@ public with sharing class StudentScheduleApex {
     public static List<Student__c> getStudent() {
         
         List<Student__c> s = [SELECT Name, GPA__c, Approved_For_Gradution__c, Grade_Level__c, 
-        Graduation_Date__c, Student_Counselor__c FROM Student__c];
+        Graduation_Date__c, Has_Graduated__c,Student_Counselor__c FROM Student__c];
         // strip inaccessable goes hereish
         return s;
     }

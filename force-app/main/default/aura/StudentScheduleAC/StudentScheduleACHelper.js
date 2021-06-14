@@ -23,7 +23,7 @@
     getStudentData : function(cmp) {
 
         let data = []
-        let sdh_con = []
+        
         var action = cmp.get('c.getStudent');
         action.setCallback(this, $A.getCallback(function (response) {
             var state = response.getState();
@@ -33,14 +33,16 @@
                 //*
                 for(let x in response.getReturnValue()){
                     //console.log(response.getReturnValue()[x]);
-                        let data2 = {
+
+                    if(!response.getReturnValue()[x].Has_Graduated__c){
+                        let data2 = {               
 
                             Name: response.getReturnValue()[x].Name,
                             grade_level: response.getReturnValue()[x].Grade_level__c,
                             Student_total: response.getReturnValue()[x]
                         }
                         data.push(data2);
-                        
+                    } 
                 }
                 //*/
                 cmp.set('v.data', data);

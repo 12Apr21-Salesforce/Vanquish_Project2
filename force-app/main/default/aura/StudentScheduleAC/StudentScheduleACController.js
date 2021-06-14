@@ -3,7 +3,7 @@
         cmp.set('v.columns', [
             {label: 'Student', fieldName: 'Name', type: 'Student__c'},
             {label: 'Grade Level', fieldName: 'grade_level', type: 'text'},
-            //{fieldName: 'Student_total', type: 'Object'} 
+             
         ]);
         
         cmp.set('v.columns2', [
