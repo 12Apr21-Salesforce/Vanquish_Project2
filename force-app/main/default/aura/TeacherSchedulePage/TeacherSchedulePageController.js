@@ -10,6 +10,14 @@
         helper.classRosterSet(cmp, event)
     },
 
+    handleEmail : function(cmp, event, helper) {
+        helper.handleEmail(cmp, event)
+    },
+
+    hideEmail : function(cmp, event, helper) {
+        helper.hideEmail(cmp, event)
+    },
+
     //changes the student list on selection of class
     rosterSelect : function(cmp, event, helper) {
         helper.rosterSelect(cmp, event)

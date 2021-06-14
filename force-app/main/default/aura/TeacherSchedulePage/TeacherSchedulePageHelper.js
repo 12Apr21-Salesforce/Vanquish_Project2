@@ -36,6 +36,14 @@
         $A.enqueueAction(classList)
     },
 
+    handleEmail: function(component, event) {
+        component.set("v.toggleEmail", true) 
+    },
+
+    hideEmail: function(component, event) {
+        component.set("v.toggleEmail", false)
+    },
+
     //sets the list of classes to display for selection, that don't repeat due to multiple class times
     classRosterSet: function(component, event) {
         var roster = component.get("c.getRoster")
