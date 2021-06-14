@@ -1,11 +1,5 @@
 //controller used with Aura Component TeacherSchedulePage
 public with sharing class AuraApexController {
-    
-    @AuraEnabled(cacheable=true)
-    public static List<Id> getTeacherIds() {
-        List<Teacher__c> teachList = [SELECT Id FROM Teacher__c]; 
-        List<Id> teachIds = new List<Id>();
-
 
     @AuraEnabled
     public static List<Teacher__c> getTeachers(){
@@ -14,13 +8,11 @@ public with sharing class AuraApexController {
             return totalList;
         } catch (Exception e) { throw new AuraHandledException(e.getMessage());}
 
-
     }
 
-    @AuraEnabled(cacheable=true)
-    public static List<String> getTeacherNames() {
+    @AuraEnabled
+    public static List<Class_Meeting_Time__c> getWeeklyMeetingTimes(Teacher__c tea){
         try {
-
             String id = tea.id;
             List<Class_Meeting_Time__c> weeklyMeetings = [SELECT Class_Name__c, Campus_Location__c, Class_Span__c, Duration__c, Day__c, Class__c
                                                         FROM Class_Meeting_Time__c 
@@ -28,13 +20,12 @@ public with sharing class AuraApexController {
                                                         ORDER BY Day__c];
             return weeklyMeetings;
         } catch (Exception e) { throw new AuraHandledException(e.getMessage());}
-
     }
 
     @AuraEnabled
-    public static List<Teacher__c> getTeachers(){
-        try {
 
+    public static List<Class_Meeting_Time__c> getTodayMeetingTimes(Teacher__c tea, String day){
+        try {
             String id = tea.id;
             List<Class_Meeting_Time__c> dailyMeetings = [SELECT Class_Name__c, Campus_Location__c, Class_Span__c, Duration__c
                                                         FROM Class_Meeting_Time__c 
@@ -64,7 +55,6 @@ public with sharing class AuraApexController {
                                                 WHERE Class__c=:id];
             return students;
         } catch (Exception e) { throw new AuraHandledException(e.getMessage());}
-
     }
  
     @AuraEnabled 

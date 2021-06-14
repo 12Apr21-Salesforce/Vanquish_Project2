@@ -1,2 +1,20 @@
-.THIS {
+.THIS.title {
+
+    font-size: 2em;
+    font-family: Gravitas One;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9b643;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 300;
+    border: 1px solid black;
+    
+}
+
+.THIS.activeMessage {
+
+    padding: 5px 10px;
+
 }
