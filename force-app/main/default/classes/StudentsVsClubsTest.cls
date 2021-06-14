@@ -21,8 +21,4 @@ public class StudentsVsClubsTest {
         System.assertEquals('DECA',jStudentClub[0].Club__r.Name, 'Club value mathces');
 
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main
