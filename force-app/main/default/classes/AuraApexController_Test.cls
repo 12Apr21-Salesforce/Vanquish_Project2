@@ -30,15 +30,18 @@ public with sharing class AuraApexController_Test {
             jcList.add(new Junction_Class__c(Student__c=stu.id,Class__c=cls.id));
         }
 
-        insert jcList;
+        insert jcList;       
 
     }
 
             
-            //begin actual test
-                    //represents a single case that should pass
+        //single case test
         @isTest
         private static void test1() {
+
+            String a = 'abc@123.com';
+            String b = 'hello';
+            String c = 'world';
 
             Teacher__c teach = [SELECT Name FROM Teacher__c LIMIT 1];
             Class_Meeting_Time__c cmt = [SELECT Class_Name__c, Day__c FROM Class_Meeting_Time__c LIMIT 1];
@@ -50,6 +53,7 @@ public with sharing class AuraApexController_Test {
             List<Class_Meeting_Time__c> today = AuraApexController.getTodayMeetingTimes(teach, cmt.Day__c);
             List<Class__c> roster = AuraApexController.getRoster(teach);
             List<Junction_Class__c> junction = AuraApexController.getStudents(cls);
+            AuraApexController.sendMailMethod(a,b,c);
             Test.stopTest();
 
             System.assertEquals(t[0].Name, 'Banner Banner');
