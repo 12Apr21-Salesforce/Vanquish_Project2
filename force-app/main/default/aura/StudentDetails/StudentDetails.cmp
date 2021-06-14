@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="StudentsVsClubs" access="global">
+    
+    <aura:handler name="showDetails" event="force:navigateToSObject" action="{!c.handleStudentDetails}"></aura:handler>
+    
+	<aura:attribute name="student" type="String"></aura:attribute>
+    <aura:attribute name="clulb" type="String"></aura:attribute>
+    <aura:attribute name="showForm" type="Boolean" default="false"></aura:attribute>
+    
+    <aura:if isTrue="{!v.showForm}">
+        <lightning:card title="Student Details">
+        	<lightning:recordForm recordId="{!v.student}" objectApiName="Student__c" layoutType="Compact"
+                                  onsuccess="{!c.handleStudent}"></lightning:recordForm>
+        </lightning:card>
+        <lightning:card title="Club Details">
+        	<lightning:recordForm recordId="{!v.club}" objectApiName="Club__c" layoutType="Compact"></lightning:recordForm>
+        </lightning:card>
+    </aura:if>
+</aura:component>

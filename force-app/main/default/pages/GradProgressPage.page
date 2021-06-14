@@ -24,7 +24,7 @@
             <br/>
 
             
-            <apex:selectList value="{! filterId }" size="1" style="background-color: #f9b643; font-size: 3em; width: 100%; margin-bottom: 20px; margin-top: 20px; padding: 5px; font-family: copperplate;">
+            <apex:selectList value="{! filterId }" size="1" style="background-color: #f9b644; font-size: 3em; width: 100%; margin-bottom: 20px; margin-top: 20px; padding: 5px; font-family: copperplate;">
                 <apex:selectOptions value="{! listViewOptions }"/>
                 <apex:actionSupport event="onchange" reRender="student_list"/>
             </apex:selectList>
@@ -38,7 +38,7 @@
                     <apex:column value="{!item.Grade_Level__c}" style="font-family: monospace ; font-size: 2em"/>
                     <apex:column value="{!item.Graduation_Date__c}" style="font-family: monospace; font-size: 2em; color: {!if(item.Grade_Level__c = '12th','#00ff00','black')}"/>
                     <apex:column value="{!item.Approved_Grad__c}"  style="font-family: monospace; font-size: 2em"/>
-                    <apex:column value="{!item.Counselor__c}" style="font-family: monospace ; font-size: 2em; color: #0000ff"/>
+                    <apex:column value="{!item.Counselor__c}" style="font-family: monospace ; font-size: 2em; color: blue"/>
                 </apex:pageBlockTable>
             </apex:inlineEditSupport>
             
