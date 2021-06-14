@@ -160,15 +160,6 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Students</pluralLabel>
-    <profileSearchLayouts>
-        <fields>NAME</fields>
-        <fields>Grade_Level__c</fields>
-        <fields>Approved_for_Gradution__c</fields>
-        <fields>Approved_Grad__c</fields>
-        <fields>GPA__c</fields>
-        <fields>Graduation_Date__c</fields>
-        <profileName>System Administrator</profileName>
-    </profileSearchLayouts>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

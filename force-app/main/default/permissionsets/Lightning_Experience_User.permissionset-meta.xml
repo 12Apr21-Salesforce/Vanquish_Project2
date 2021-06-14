@@ -77,16 +77,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Student_Counselor__c.Education__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Student_Counselor__c.Legacy_Student_Conselor__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Student__c.Approved_Grad__c</field>
         <readable>false</readable>
     </fieldPermissions>
