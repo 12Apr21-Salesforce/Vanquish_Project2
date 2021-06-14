@@ -1,4 +1,5 @@
 ({
+
     //initializes the dataTable with a list of teachers
     doInit : function(cmp, event, helper) {
         helper.doInit(cmp, event)
@@ -27,4 +28,5 @@
     changeDailyList : function(cmp, event, helper) {
         helper.changeDailyList(cmp, event)
     },
+
 })

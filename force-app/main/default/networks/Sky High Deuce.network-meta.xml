@@ -40,7 +40,7 @@
     <selfRegistration>false</selfRegistration>
     <sendWelcomeEmail>true</sendWelcomeEmail>
     <site>Sky_High_Deuce</site>
-    <status>Live</status>
+    <status>UnderConstruction</status>
     <tabs>
         <defaultTab>home</defaultTab>
         <standardTab>Chatter</standardTab>

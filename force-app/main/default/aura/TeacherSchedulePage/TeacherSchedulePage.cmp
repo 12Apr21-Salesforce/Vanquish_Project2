@@ -1,3 +1,4 @@
+
 <aura:component controller="AuraApexController" 
     implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" 
     access="global">

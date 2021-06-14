@@ -126,6 +126,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MyUniversityController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SiteLoginController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -143,10 +147,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>StudentDataController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>StudentScheduleApex</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -182,6 +182,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UniversityDataController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>balance</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -198,11 +202,6 @@
         <editable>false</editable>
         <field>Campus__c.Legacy_Campus_Number__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Class_Meeting_Time__c.Campus_Location__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -227,11 +226,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Class_Meeting_Time__c.Start_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Class_Meeting_Time__c.Teacher__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -278,6 +272,16 @@
         <editable>true</editable>
         <field>Club__c.Legacy_Club_Id__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Student_Counselor__c.Education__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Student_Counselor__c.Legacy_Student_Conselor__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -355,6 +359,9 @@
         <layout>Junction_Club__c-Junction-Club Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Student_Counselor__c-Student Counselor Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Student__c-SC-Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -412,6 +419,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Junction_Club__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Student_Counselor__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -570,6 +586,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>New_Student</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Student_Counselor__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
