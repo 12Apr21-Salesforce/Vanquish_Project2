@@ -43,7 +43,16 @@
 
         helper.getScheduleData(cmp, selectedRows);
         
-    }
+        }
+    },
+
+    handleClick: function(cmp, event, helper) {
+
+        var selectedRows = cmp.find("datable").getSelectedRows();
+        cmp.set('v.class2dayonly', !cmp.get('v.class2dayonly'));
+        helper.getScheduleData(cmp, selectedRows);
+        
+
     }
   
 })
