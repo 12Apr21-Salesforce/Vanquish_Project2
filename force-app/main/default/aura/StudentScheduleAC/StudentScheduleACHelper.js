@@ -39,9 +39,10 @@
                         let data2 = {               
 
                             Name: response.getReturnValue()[x].Name,
-                            grade_level: response.getReturnValue()[x].Grade_level__c,
+                            grade_level: response.getReturnValue()[x].Grade_Level__c,
                             Student_total: response.getReturnValue()[x]
                         }
+                        //console.log(data2); ///////
                         data.push(data2);
                     } 
                 }
@@ -85,7 +86,7 @@
         action.setCallback(this, function (response) {
             var state = response.getState();
             if (state === "SUCCESS") {
-                
+                console.log("ahoy");
                 for(let x in response.getReturnValue()){
                     
                         
@@ -93,13 +94,15 @@
                         data.push({Name: x,
                                    grade_lvl: studentName[stuindex].Student_total.Grade_Level__c,
                                    GPA: studentName[stuindex].Student_total.GPA__c,
-                                   Counselor: studentName[stuindex].Student_total.Student_Counselor__c,
+                                   Counselor: studentName[stuindex].Student_total.Student_Counselor__r.Name,
                                    Grad_Approved: studentName[stuindex].Student_total.Approved_for_Gradution__c,
                                    Grad_Date: studentName[stuindex].Student_total.Graduation_Date__c
                         });
 
                         
-                  
+                        // this line adds a spacer row to the datatable, ie that empty row between 2 people,
+                        // VVV remove this line if you dont like that                        
+                        data.push({});
                         
 
                         
@@ -126,7 +129,7 @@
 
                                         let junction_classes = {
                                                 
-                                            Counselor: response.getReturnValue()[x][y].Name,
+                                            Grad_Date: response.getReturnValue()[x][y].Name,
                                             Start: response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].Start_Time__c,                        
                                             End: response.getReturnValue()[x][y].Class_Meeting_Times1__r[0].End_Time__c
                                         }
@@ -172,7 +175,9 @@
                         } //end of for loop
 
                    } // end of else
-                      // space out the entries
+                      
+                      // this line adds a spacer row to the datatable, ie that empty row between 2 people,
+                        // VVV remove this line if you dont like that 
                       data.push({});
                       loop_exlusion_counter = true;
                 }
