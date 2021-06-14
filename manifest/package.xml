@@ -97,6 +97,7 @@
         <members>Teacher_Schedule_List</members>
         <members>Student_Schedules</members>
         <members>New_Student</members>
+        <members>University__c</members>
         <name>CustomTab</name>
     </types>
     <types>
