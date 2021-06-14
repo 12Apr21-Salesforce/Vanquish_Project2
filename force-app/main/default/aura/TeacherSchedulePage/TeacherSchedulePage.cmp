@@ -4,32 +4,61 @@
 
     <c:TeacherScheduleBanner />
 
-    <aura:attribute name="columns" type="List" default="[{'label': 'Name', 'fieldName': 'Name'}]" />
-    <aura:attribute name="showScheduleButton" type="Boolean" default="false" />
+    <aura:attribute name="teacherColumns" type="List" default="[{'label': 'Name', 'fieldName': 'Name'}]" />
+    <aura:attribute name="classesColumns" type="List" default="[{'label': 'Class', 'fieldName': 'Name'},
+                                                                {'label': 'Class Count', 'fieldName': 'Class_Count__c'}]" />
+    <aura:attribute name="showAndTell" type="Boolean" default="false" />
     <aura:attribute name="teachers" type="Teacher__c[]" />
     <aura:attribute name="currentTeacher" type="Teacher__c" />
+    <aura:attribute name="currentClass" type="Class__c" />
+    <aura:attribute name="students" type="Junction_Class__c[]" />
+    <aura:attribute name="studentList" type="Junction_Class__c[]" />
     <aura:attribute name="classes" type="Class_Meeting_Time__c[]" />
+    <aura:attribute name="classRoster" type="Class__c[]" />
     <aura:attribute name="daily" type="Class_Meeting_Time__c[]" />
-    <aura:attribute name="showAndTell" type="Boolean" default="false" />
+
+    
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
     <p class="title">Teacher List</p>
 
     <div style="height:300px">
-    	<lightning:datatable aura:id="teacherTable" keyField="id" data="{!v.teachers}" columns="{!v.columns}" maxRowSelection="1"
-                             onrowselection="{!c.handleSelect}" />
+    	<lightning:datatable aura:id="teacherTable" keyField="id" data="{!v.teachers}" columns="{!v.teacherColumns}" maxRowSelection="1"
+                            hideTableHeader="true" onrowselection="{!c.teacherSelect}" />
     </div>
 
 <aura:if isTrue="{!v.showAndTell}">
 
-    <p class="title">Showing Schedule for {!v.currentTeacher.Name}</p>
+    <p class="title">Showing Information for {!v.currentTeacher.Name}</p>
 
         <lightning:accordion aura:id="accordionOuter">
+            
+            <lightning:accordionSection aura:id="roster" label="Select Class to Show Roster">
+                <div>
+                    <lightning:datatable aura:id="classTable" keyField="id" data="{!v.classRoster}" columns="{!v.classesColumns}" maxRowSelection="1"
+                                onrowselection="{!c.rosterSelect}" />
+                </div>
+
+                    <lightning:accordion aura:id="accordionInner">
+                        <lightning:accordionSection aura:id="students" label="{!v.currentClass.Name}">
+
+                            <aura:iteration items="{!v.students}" var="student">
+                                <lightning:recordViewForm recordId="{!student.Id}" objectApiName="Junction_Class__c">
+                                    <div class="slds-box">
+                                        <lightning:outputField label="Students on Current Roster" fieldName="Student__c" />
+                                    </div>
+                                </lightning:recordViewForm>
+                            </aura:iteration>
+
+                        </lightning:accordionSection>
+                    </lightning:accordion>
+
+            </lightning:accordionSection>
 
             <lightning:accordionSection aura:id="weeklySchedule" label="Weekly Schedule">
                 <aura:iteration items="{!v.classes}" var="class">
                     <lightning:recordViewForm recordId="{!class.Id}" objectApiName="Class_Meeting_Time__c">
-                        <div class="slds-box">
+                        <div style="height:300px" class="slds-box">
                             <lightning:outputField label="Class" fieldName="Class__c" />
                             <lightning:outputField label="Campus" fieldName="Campus_Location__c" />
                             <lightning:outputField label="Day" fieldName="Day__c" />
@@ -39,7 +68,7 @@
                 </aura:iteration>
             </lightning:accordionSection>
 
-            <lightning:accordionSection aura:id="dailySchedule" label="Day Schedule">
+            <lightning:accordionSection aura:id="dailySchedule" label="Daily Schedule">
 
                 <lightning:select aura:id="selectDay" name="weekday" label="Select Day of Week" onchange="{!c.changeDailyList}">
                     <option value="">Select Day</option>
@@ -55,8 +84,8 @@
                         <div class="slds-box">
                             <lightning:outputField label="Class" fieldName="Class__c" />
                             <lightning:outputField label="Campus" fieldName="Campus_Location__c" />
-                            <lightning:outputField label="Start Time" fieldName="Start_Time__c" />
-                            <lightning:outputField label="End Time" fieldName="End_Time__c" />
+                            <lightning:outputField label="Class Times" fieldName="Class_Span__c" />
+                            <lightning:outputField label="Class Length (minutes)" fieldName="Duration__c" />
                         </div>
                     </lightning:recordViewForm>
                 </aura:iteration>
