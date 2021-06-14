@@ -1,4 +1,5 @@
 ({
+
     //initializes the list of teachers in the datatable at the top of the page, and sets the class list for later reference
     doInit : function(component, event) {
         var teachers = component.get("c.getTeachers")
@@ -92,4 +93,5 @@
 
         $A.enqueueAction(classes)
     },
+
 })

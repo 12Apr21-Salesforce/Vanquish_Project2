@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <h1 class="title">Welcome to Sky High School for Heroes!</h1>
+    
+</aura:component>
