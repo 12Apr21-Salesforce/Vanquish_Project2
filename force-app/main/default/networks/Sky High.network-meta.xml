@@ -47,7 +47,7 @@
         <selfRegProfilePageOverrideSetting>Standard</selfRegProfilePageOverrideSetting>
     </networkPageOverrides>
     <picassoSite>Sky_High1</picassoSite>
-    <selfRegistration>true</selfRegistration>
+    <selfRegistration>false</selfRegistration>
     <sendWelcomeEmail>true</sendWelcomeEmail>
     <site>Sky_High</site>
     <status>Live</status>
@@ -58,6 +58,5 @@
         <customTab>Gard_Progress</customTab>
         <defaultTab>01r5e000000XxBY</defaultTab>
     </tabs>
-    <urlPathPrefix>skyhigh</urlPathPrefix>
     <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
 </Network>

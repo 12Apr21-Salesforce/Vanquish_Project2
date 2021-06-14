@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+	
+    <div class="studentBanner">
+        <img src="{!$Resource.NewStudent}"/>
+    </div>
+    
+    <h1 class="title">Welcome! Enter your information below!</h1>
+    
+</aura:component>
