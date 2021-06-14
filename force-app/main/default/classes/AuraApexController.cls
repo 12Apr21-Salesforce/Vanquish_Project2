@@ -23,6 +23,7 @@ public with sharing class AuraApexController {
     }
 
     @AuraEnabled
+
     public static List<Class_Meeting_Time__c> getTodayMeetingTimes(Teacher__c tea, String day){
         try {
             String id = tea.id;

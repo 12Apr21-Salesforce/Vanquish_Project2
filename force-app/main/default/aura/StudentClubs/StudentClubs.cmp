@@ -1,0 +1,14 @@
+<aura:component controller="StudentsVsClubs" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+   
+	<aura:attribute name="students" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+  
+    <div style="height:400px">
+        <lightning:datatable data="{! v.students }"
+        columns="{! v.columns }"
+        keyField="id"
+        hideCheckboxColumn="true"/>
+    </div>
+    
+</aura:component>	
