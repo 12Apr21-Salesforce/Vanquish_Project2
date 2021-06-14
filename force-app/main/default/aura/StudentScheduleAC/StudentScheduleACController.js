@@ -15,7 +15,7 @@
             {label: 'Student Counselor', fieldName: 'Counselor', type: 'text'}, 
             {label: 'Graduation Date', fieldName: 'Grad_Date', type: 'text'},
             {fieldName: 'Start', type: 'date', typeAttributes: {hour: "2-digit" , minute: "2-digit"} },
-            {fieldName: 'End', type: 'date', typeAttributes: {hour: "2-digit" , minute: "2-digit"} },
+             
             /*
             , typeAttributes: {weekday: "long",
             year: "numeric",
