@@ -229,6 +229,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MyUniversityController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SiteLoginController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -250,10 +254,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>StudentDataController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>StudentScheduleApex</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -413,6 +413,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Student_Counselor__c.Education__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Student_Counselor__c.Legacy_Student_Conselor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Student__c.Approved_Grad__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -497,6 +507,9 @@
         <layout>Junction_Club__c-Junction-Club Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Student_Counselor__c-Student Counselor Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Student__c-Student Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -554,6 +567,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Junction_Club__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Student_Counselor__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -713,6 +735,10 @@
     <tabVisibilities>
         <tab>New_Student</tab>
         <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Student_Counselor__c</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Student_Schedules</tab>
