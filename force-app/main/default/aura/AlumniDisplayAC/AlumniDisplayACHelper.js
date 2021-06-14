@@ -21,6 +21,7 @@
                             Grad_Date: response.getReturnValue()[x].Graduation_Date__c
                         }
                         data.push(data2);
+                        console.log(data2)
                     }
                 }
                 //*/
