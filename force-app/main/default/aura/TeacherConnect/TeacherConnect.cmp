@@ -1,4 +1,6 @@
-<aura:component controller="AuraApexController">
+<aura:component controller="AuraApexController" 
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" 
+    access="global">
    <!--Part 1 [for attribute declare]-->  
    <aura:attribute name="email" type="string"/>
    <aura:attribute name="subject" type="string"/>
