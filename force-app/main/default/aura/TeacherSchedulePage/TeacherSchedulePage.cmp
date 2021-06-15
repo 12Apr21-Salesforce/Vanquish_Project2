@@ -34,6 +34,7 @@
     <aura:if isTrue="{!v.toggleEmail}" >
         <lightning:button label="Hide Email Tab" title="Hides the email component" onclick="{!c.hideEmail}" />
         <c:TeacherConnect />
+        <br />
     </aura:if>
 
     <aura:if isTrue="{!v.showAndTell}">
